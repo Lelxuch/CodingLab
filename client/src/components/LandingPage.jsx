@@ -6,15 +6,15 @@ function LandingPage() {
     return (
         <div>
             <header>
-                <Link to="" className="header-brand"><img src="./images/logo-dark.png" alt="" /></Link>
-                <Link to="" className="header-login"><img src="./images/Home/header/enter.png" alt="" /></Link>
+                <Link to="/" className="header-brand"><img src="./images/logo-dark.png" alt="" /></Link>
+                <Link to="/login" className="header-login"><img src="./images/Home/header/enter.png" alt="" /></Link>
             </header>
 
             <section id="intro">
                 <div className="container intro-inner">
                     <div className="intro-left">
                         <span className="intro-text">Want to find someone who will turn your ideas into reality?</span>
-                        <Link to="" className="intro-btn">Join us</Link>
+                        <Link to="/register" className="intro-btn">Join us</Link>
                     </div>
                     <div className="intro-right">
                         <svg  viewBox="0 0 653 739" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M345.286 10.1312C407.572 -10.7963 482.897 2.11507 538.445 35.8383C593.477 69.2483 620.483 131.184 640.937 189.622C659.017 241.28 652.549 295.583 648.336 349.812C644.391 400.594 648.174 455.354 617.054 497.062C586.532 537.97 520.853 538.063 482.238 572.423C427.093 621.491 421.132 734.468 345.286 738.881C271.779 743.158 256.561 631.07 198.166 588.952C150.204 554.36 74.0731 561.751 37.2528 516.712C-0.145184 470.966 -3.99527 407.131 2.66407 349.812C8.99116 295.354 32.8712 241.798 73.7374 202.681C111.191 166.83 155.481 152.953 198.166 122.686C249.709 86.1376 284.465 30.5667 345.286 10.1312Z" fill="#8449FC"/></svg>

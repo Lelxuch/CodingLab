@@ -6,24 +6,6 @@ body {
 
 a {
     color: #fff;
-    text-decoration: none;
-}
-
-h1, h2, h3, h4, h5 {
-    margin: 0;
-}
-
-h1 {
-    font-size: 3.5rem;
-}
-
-h2 {
-    font-size: 3rem;
-}
-
-.container{
-    width: 85%;
-    margin: 0 auto;
 }
 
 /* Header */
@@ -33,7 +15,7 @@ header{
     justify-content: space-between;
     width: 90%;
     margin: 0 auto;
-    margin-top: 10px;
+    margin-top: 30px;
 }
 
 .header-brand img {

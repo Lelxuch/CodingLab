@@ -5,6 +5,30 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+h1, h2, h3, h4, h5 {
+    margin: 0;
+}
+
+h1 {
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.container{
+    width: 85%;
+    margin: 0 auto;
+}
+
 @import "scss/_LandingPage";
 @import "scss/_Footer";
+@import "scss/_Login";
+@import "scss/_Register";
   
