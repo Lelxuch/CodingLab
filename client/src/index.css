@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto");
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: #251F41;
+  color: #fff;
+  font-size: 16px;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.header-brand img {
+  width: 80px;
+}
+
+.header-login img {
+  width: 60px;
+  height: 60px;
+}
+
+/* Intro */
+#intro {
+  height: 85vh;
+}
+
+.intro-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+}
+
+.intro-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40%;
+}
+
+.intro-text {
+  font-size: 3.5rem;
+  margin-bottom: 70px;
+}
+
+.intro-btn {
+  font-size: 3.5rem;
+  background: #00CFFD;
+  padding: 15px 30px;
+  border-radius: 20px;
+}
+
+.intro-right {
+  height: 80vh;
+  width: 50%;
+}
+
+.intro-right svg {
+  height: 100%;
+  margin: 0 auto;
+}
+
+.intro-img {
+  position: relative;
+  top: -100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 80vh;
+}
+
+.intro-img img {
+  position: absolute;
+  width: 100%;
+}
+
+/* Advantages */
+#advantages {
+  margin-top: 400px;
+}
+
+#advantages .svg1 {
+  position: absolute;
+  width: 800px;
+  -webkit-transform: translate3d(-35%, -110%, 0);
+          transform: translate3d(-35%, -110%, 0);
+}
+
+#advantages .svg2 {
+  position: absolute;
+  width: 800px;
+  -webkit-transform: translate3d(135%, -65%, 0);
+          transform: translate3d(135%, -65%, 0);
+}
+
+.advantages-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.card {
+  width: 30%;
+  color: #251F41;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.6);
+  z-index: 5;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+}
+
+.card-title {
+  padding: 30px 0;
+  text-align: center;
+  font-size: 2.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+}
+
+.card-content {
+  padding: 30px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* Categories */
+#categories {
+  margin-top: 400px;
+  margin-bottom: 100px;
+}
+
+.cat-inner {
+  text-align: center;
+}
+
+.cat-title::after {
+  content: " ";
+  display: block;
+  height: 4px;
+  background: #00CFFD;
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.cat-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 60px 0;
+}
+
+.cat-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cat-item img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.cat-item span {
+  font-size: 1.5rem;
+}
+
+.cat-last {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+footer {
+  height: 250px;
+  background: #252A57;
+}
+/*# sourceMappingURL=index.css.map */
