@@ -1,2 +1,2 @@
 # CodingLab
-CodingLab Project
+## Team ### Front: Sanzhar ### Back: Daurbek, Daurenbek
