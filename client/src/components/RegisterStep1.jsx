@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Register() {
     return (
-        <div id="Register">
+        <div id="RegisterStep1">
             <div className="container">
                 <div class="blocks">
                     <div class="info-block">

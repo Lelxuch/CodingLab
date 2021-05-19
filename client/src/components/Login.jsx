@@ -15,7 +15,7 @@ function Login() {
                                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
                                 ex ratione. Aliquid!
                             </p>
-                            <Link to="/register">Sign up</Link>
+                            <Link to="/register-1">Sign up</Link>
                         </div>
                         <img src="./images/LogReg/Marketing.svg" class="info-block-image" alt=""/>
                     </div>
