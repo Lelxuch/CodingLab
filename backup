@@ -1,0 +1,259 @@
+@import "../scss/_Variables";
+@import "../scss/_BreakPoints";
+
+html {
+    font-size: 16px;
+    @include media (">desktop", "<=LGdesktop") {
+        font-size: 20px;
+    }
+    @include media ('>phone', '<=tablet') {
+        font-size: 10px;
+    }
+    @include media ('<=phone') {
+        font-size: 6px;
+    }
+}
+
+body {
+    background: $dark-back;
+    color: $white;
+    @include media ("<=LGdesktop") {
+        background: red;
+    }
+    @include media ('>phone', '<=tablet') {
+        background: blue;
+    }
+    @include media ('<=phone') {
+        background: green;
+    }
+}
+
+a {
+    color: $white;
+}
+
+/* LandingPage */
+#LandingPage {
+    overflow-x: hidden;
+    .container {
+        width: 85%;
+        @include media ('>desktop', '<=LGdesktop') {
+            width: 80%;
+        }
+        @include media ('>phone', '<=tablet') {
+            width: 95%;
+        }
+    }
+}
+
+/* Header */
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 30px;
+    @include media ('>phone', '<=tablet') {
+        width: 95%;
+    }
+}
+
+.header-brand img {
+    width: 80px;
+    @include media ('>desktop', '<=LGdesktop') {
+        width: 100px;
+    }
+    @include media ('>phone', '<=tablet') {
+        width: 60px;
+    }
+}
+
+.header-login img {
+    width: 60px;
+    @include media ('>desktop', '<=LGdesktop') {
+        width: 80px;
+    }
+    @include media ('>phone', '<=tablet') {
+        width: 45px;
+    }
+}
+
+/* Intro */
+#intro{
+    height: 85vh;
+    @include media ('>phone', '<=tablet') {
+        height: 75vh;
+    }
+    @include media ('<=phone') {
+        height: 100%;
+    }
+}
+
+.intro-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    @include media ('<=phone') {
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+}
+
+.intro-left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+}
+
+.intro-text {
+    font-size: 3.5rem;
+    margin-bottom: 70px;
+    @include media ('>phone', '<=tablet') {
+        margin-bottom: 40px;
+    }
+}
+
+.intro-btn {
+    font-size: 3rem;
+    background: #00CFFD;
+    padding: 15px 40px;
+    border-radius: 20px;
+}
+
+.intro-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    width: 55%;
+    @include media ('>phone', '<=tablet') {
+    }
+    img {
+        width: 100%;
+    }
+}
+
+/* Advantages */
+#advantages {
+    margin-top: 400px;
+    @include media ('>phone', '<=tablet') {
+        margin-top: 150px;
+    }
+    .svg1 {
+        position: absolute;
+        width: 900px;
+        height: 900px;
+        transform: translate3d(-50%, -70%, 0);
+        @include media ('>desktop', '<=LGdesktop') {
+            width: 1100px;
+            height: 1100px;
+        }
+        @include media ('>phone', '<=tablet') {
+            display: none;
+        }
+    }
+    .svg2 {
+        display: none;
+        position: absolute;
+        width: 800px;
+        height: 800px;
+        transform: translate3d(120%, -50%, 0);
+    }
+}
+
+.advantages-inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    width: 30%;
+    color: $dark-back;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.6);
+    z-index: 5;
+    backdrop-filter: blur(20px);
+}
+
+.card-title {
+    padding: 30px 0;
+    text-align: center;
+    font-size: 2.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+}
+
+.card-content{
+    padding: 30px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* Categories */
+#categories {
+    margin-top: 400px;
+    margin-bottom: 100px;
+    @include media ('>phone', '<=tablet') {
+        margin-top: 150px;
+    }
+}
+
+.cat-inner {
+    text-align: center;
+}
+
+.cat-title::after {
+    content: " ";
+    display: block;
+    height: 3px;
+    background: $dark-primary;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 10px;
+    @include media ('>phone', '<=tablet') {
+        width: 200px;
+        height: 2px;
+    }
+    @include media ('>desktop', '<=LGdesktop') {
+        width: 350px;
+        height: 4px;
+    }
+}
+
+.cat-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 80px 0;
+    @include media ('>phone', '<=tablet') {
+        margin: 60px 0;
+    }
+}
+
+.cat-item {
+    display: flex;
+    align-items: center;
+    img {
+        width: 50px;
+        margin-right: 10px;
+        @include media ('>desktop', '<=LGdesktop') {
+            width: 60px;
+            margin-right: 20px;
+        }
+        @include media ('>phone', '<=tablet') {
+            width: 40px;
+        }
+    }
+    span {
+        font-size: 1.5rem;
+    }
+}
+
+.cat-last {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+}

@@ -1,8 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto');
+@import "./scss/_Variables";
+@import "./scss/_BreakPoints";
+
+html {
+    font-size: 16px;
+    @include media (">=LGdesktop") {
+        font-size: 20px;
+    }
+    @include media (">=tablet", "<desktop") {
+        font-size: 10px;
+    }
+    @include media (">=phone", "<tablet") {
+        font-size: 10px;
+    }
+    @include media ("<phone") {
+        font-size: 9px;
+    }
+}
 
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
+    background: $dark-back;
+    color: $white;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
 }
 
 h1, h2, h3, h4, h5 {
@@ -18,12 +44,12 @@ h2 {
 }
 
 a {
-    color: #fff;
+    color: $white;
     text-decoration: none;
 }
 
 .container{
-    width: 85%;
+    width: 100%;
     margin: 0 auto;
 }
 
