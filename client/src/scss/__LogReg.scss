@@ -1,40 +1,42 @@
-.container {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    overflow: hidden;
-    @include media (">=phone", "<=tablet") {
-        min-height: 800px;
-        height: 100vh;
+#RegisterStep1, #Login {
+    .container {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        overflow: hidden;
+        @include media (">=phone", "<=tablet") {
+            min-height: 800px;
+            height: 100vh;
+        }
+        @include media ("<=phone") {
+            padding: 1.5rem;
+        }
     }
-    @include media ("<=phone") {
-        padding: 1.5rem;
-    }
-}
-
-.container::before {
-    content: "";
-    position: absolute;
-    height: 2000px;
-    width: 2000px;
-    top: -10%;
-    right: 48%;
-    transform: translateY(-50%);
-    background: $dark-accent;
-    border-radius: 50%;
-    z-index: 6;
-    @include media ("<=tablet") {
-        width: 1500px;
-        height: 1500px;
-        transform: translateX(-50%);
-        left: 30%;
-        bottom: 68%;
-        right: initial;
-        top: initial;
-    }
-    @include media ("<=phone") {
-        bottom: 72%;
-        left: 50%;
+    
+    .container::before {
+        content: "";
+        position: absolute;
+        height: 2000px;
+        width: 2000px;
+        top: -10%;
+        right: 48%;
+        transform: translateY(-50%);
+        background: $dark-accent;
+        border-radius: 50%;
+        z-index: 6;
+        @include media ("<=tablet") {
+            width: 1500px;
+            height: 1500px;
+            transform: translateX(-50%);
+            left: 30%;
+            bottom: 68%;
+            right: initial;
+            top: initial;
+        }
+        @include media ("<=phone") {
+            bottom: 72%;
+            left: 50%;
+        }
     }
 }
 

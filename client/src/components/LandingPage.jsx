@@ -14,7 +14,7 @@ function LandingPage() {
                 <div className="container intro-inner">
                     <div className="intro-left">
                         <span className="intro-text">Want to find someone who will turn your ideas into reality?</span>
-                        <Link to="/register" className="intro-btn">Join us</Link>
+                        <Link to="/register-1" className="intro-btn">Join us</Link>
                     </div>
                     <div className="intro-right">
                         <img src="./images/Home/intro/vision.png" alt="" />

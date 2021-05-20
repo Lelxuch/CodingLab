@@ -43,6 +43,10 @@ h2 {
     font-size: 3rem;
 }
 
+h3 {
+    font-size: 2.5rem;
+}
+
 a {
     color: $white;
     text-decoration: none;
@@ -56,4 +60,5 @@ a {
 @import "scss/_LandingPage";
 @import "scss/_Footer";
 @import "scss/_LogReg";
+@import "scss/_Register2";
   
