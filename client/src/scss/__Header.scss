@@ -1,0 +1,88 @@
+@import "../scss/_Variables";
+@import "../scss/_BreakPoints";
+
+header {
+    .header-inner {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .container {
+        width: 95%;
+        @include media (">=LGdesktop") {
+            width: 1700px;
+        }        
+    }
+
+    button {
+        background: none;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 0;
+    }
+
+    .logo {
+        width: 80px;
+        @include media (">=LGdesktop") {
+            width: 120px;
+        }    
+        @include media (">=phone", "<tablet") {
+            width: 70px;
+        }
+        @include media ("<phone") {
+            width: 60px;
+        }
+    }
+
+    /* Navigation */
+    nav {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-elem {
+        margin-left: 80px;
+        &:first-child {
+            margin: 0;
+        }
+    }
+
+    .nav-item {
+        display: flex;
+        align-items: center;
+        border: 2px solid $white;
+        border-radius: 10px;
+    }
+
+    .nav-logo {
+        img {
+            width: 30px;
+        }
+        border-right: 2px solid $white;
+        padding: 8px;
+    }
+
+    .nav-title {
+        font-size: 1.5rem;
+        color: $white;
+        height: 100%;
+        padding: 8px;
+    }
+
+    .dropdown {
+        
+    }
+
+    .dropdown-content {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        background: $white;
+        padding: 10px;
+        text-align: center;
+        a {
+            color: $black;
+        }
+    }
+}

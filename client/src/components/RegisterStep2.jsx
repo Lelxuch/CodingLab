@@ -36,7 +36,7 @@ function RegisterStep2() {
                     <div className="step">
                         <h1>Step 2</h1>
                         <div className="item2 btns">
-                            <h3>What type of account(Don’t worry you can change it later)</h3>
+                            <h3>What type of account (Don't worry, you can change it later)</h3>
                             <div className="btns">
                                 <input className="btn" type="button" value="Hirer"/>
                                 <input className="btn" type="button" value="Freelancer"/>

@@ -94,18 +94,13 @@ a {
     
 }
 */
-body {
-  background: #251F41;
-  color: #fff;
-}
-
-a {
-  color: #fff;
-}
-
 /* LandingPage */
 #LandingPage {
   overflow-x: hidden;
+  /* Header */
+  /* Intro */
+  /* Advantages */
+  /* Categories */
 }
 
 #LandingPage .container {
@@ -118,8 +113,7 @@ a {
   }
 }
 
-/* Header */
-header {
+#LandingPage header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -135,74 +129,73 @@ header {
 }
 
 @media (min-width: 1920px) {
-  header {
+  #LandingPage header {
     width: 1850px;
   }
 }
 
-.header-brand img {
+#LandingPage .header-brand img {
   width: 80px;
 }
 
 @media (min-width: 1920px) {
-  .header-brand img {
+  #LandingPage .header-brand img {
     width: 120px;
   }
 }
 
 @media (min-width: 414px) and (max-width: 767px) {
-  .header-brand img {
+  #LandingPage .header-brand img {
     width: 70px;
   }
 }
 
 @media (max-width: 413px) {
-  .header-brand img {
+  #LandingPage .header-brand img {
     width: 60px;
   }
 }
 
-.header-login img {
+#LandingPage .header-login img {
   width: 60px;
 }
 
 @media (min-width: 1920px) {
-  .header-login img {
+  #LandingPage .header-login img {
     width: 80px;
   }
 }
 
 @media (min-width: 414px) and (max-width: 767px) {
-  .header-login img {
+  #LandingPage .header-login img {
     width: 50px;
   }
 }
 
 @media (max-width: 413px) {
-  .header-login img {
+  #LandingPage .header-login img {
     width: 40px;
   }
 }
 
-/* Intro */
-#intro {
+#LandingPage #intro {
   height: 85vh;
 }
 
 @media (min-width: 768px) and (max-width: 1365px) {
-  #intro {
+  #LandingPage #intro {
     height: 100%;
     margin-top: 10%;
   }
 }
 
 @media (max-width: 767px) {
-  #intro {
+  #LandingPage #intro {
     height: 100%;
   }
 }
 
-.intro-inner {
+#LandingPage .intro-inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -216,7 +209,7 @@ header {
 }
 
 @media (max-width: 767px) {
-  .intro-inner {
+  #LandingPage .intro-inner {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
@@ -224,7 +217,7 @@ header {
   }
 }
 
-.intro-left {
+#LandingPage .intro-left {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -239,32 +232,32 @@ header {
 }
 
 @media (max-width: 767px) {
-  .intro-left {
+  #LandingPage .intro-left {
     width: 80%;
   }
 }
 
-.intro-text {
+#LandingPage .intro-text {
   font-size: 3.5rem;
   margin-bottom: 70px;
 }
 
 @media (max-width: 767px) {
-  .intro-text {
+  #LandingPage .intro-text {
     text-align: center;
     margin-bottom: 20px;
     margin-top: 30px;
   }
 }
 
-.intro-btn {
+#LandingPage .intro-btn {
   font-size: 3rem;
   background: #00CFFD;
   padding: 15px 40px;
   border-radius: 20px;
 }
 
-.intro-right {
+#LandingPage .intro-right {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -277,34 +270,33 @@ header {
   width: 55%;
 }
 
-.intro-right img {
+#LandingPage .intro-right img {
   width: 100%;
 }
 
 @media (max-width: 767px) {
-  .intro-right {
+  #LandingPage .intro-right {
     width: 100%;
   }
 }
 
-/* Advantages */
-#advantages {
+#LandingPage #advantages {
   margin-top: 20%;
 }
 
 @media (min-width: 1920px) {
-  #advantages {
+  #LandingPage #advantages {
     margin-top: 400px;
   }
 }
 
 @media (max-width: 767px) {
-  #advantages {
+  #LandingPage #advantages {
     margin-top: 30%;
   }
 }
 
-#advantages .svg1 {
+#LandingPage #advantages .svg1 {
   position: absolute;
   width: 900px;
   height: 900px;
@@ -313,12 +305,12 @@ header {
 }
 
 @media (max-width: 1365px) {
-  #advantages .svg1 {
+  #LandingPage #advantages .svg1 {
     display: none;
   }
 }
 
-#advantages .svg2 {
+#LandingPage #advantages .svg2 {
   display: none;
   position: absolute;
   width: 800px;
@@ -327,7 +319,7 @@ header {
           transform: translate3d(120%, -50%, 0);
 }
 
-.advantages-inner {
+#LandingPage .advantages-inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -337,7 +329,7 @@ header {
 }
 
 @media (max-width: 767px) {
-  .advantages-inner {
+  #LandingPage .advantages-inner {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -345,7 +337,7 @@ header {
   }
 }
 
-.card {
+#LandingPage .card {
   width: 30%;
   color: #251F41;
   border-radius: 20px;
@@ -356,13 +348,13 @@ header {
 }
 
 @media (max-width: 767px) {
-  .card {
+  #LandingPage .card {
     width: 100%;
     margin-bottom: 20%;
   }
 }
 
-.card-title {
+#LandingPage .card-title {
   padding: 30px 0;
   text-align: center;
   font-size: 2.5rem;
@@ -370,23 +362,22 @@ header {
   border-radius: 20px;
 }
 
-.card-content {
+#LandingPage .card-content {
   padding: 30px;
   font-size: 1.5rem;
   text-align: center;
 }
 
-/* Categories */
-#categories {
+#LandingPage #categories {
   margin-top: 20%;
   margin-bottom: 20%;
 }
 
-.cat-inner {
+#LandingPage .cat-inner {
   text-align: center;
 }
 
-.cat-title::after {
+#LandingPage .cat-title::after {
   content: " ";
   display: block;
   background: #00CFFD;
@@ -397,7 +388,7 @@ header {
 }
 
 @media (min-width: 1920px) {
-  .cat-title::after {
+  #LandingPage .cat-title::after {
     width: 420px;
     height: 5px;
     margin-top: 15px;
@@ -405,18 +396,18 @@ header {
 }
 
 @media (min-width: 414px) and (max-width: 768px) {
-  .cat-title::after {
+  #LandingPage .cat-title::after {
     width: 200px;
   }
 }
 
 @media (max-width: 413px) {
-  .cat-title::after {
+  #LandingPage .cat-title::after {
     width: 150px;
   }
 }
 
-.cat-row {
+#LandingPage .cat-row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -427,18 +418,18 @@ header {
 }
 
 @media (min-width: 414px) and (max-width: 767px) {
-  .cat-row {
+  #LandingPage .cat-row {
     margin: 20% 0;
   }
 }
 
 @media (max-width: 413px) {
-  .cat-row {
+  #LandingPage .cat-row {
     margin: 15% 0;
   }
 }
 
-.cat-item {
+#LandingPage .cat-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -450,32 +441,32 @@ header {
           justify-content: center;
 }
 
-.cat-item img {
+#LandingPage .cat-item img {
   width: 20%;
   margin-right: 5%;
 }
 
-.cat-item div {
+#LandingPage .cat-item div {
   display: block;
   font-size: 1.3rem;
 }
 
 @media (min-width: 414px) and (max-width: 767px) {
-  .cat-item:nth-child(4) {
+  #LandingPage .cat-item:nth-child(4) {
     display: none;
   }
 }
 
 @media (max-width: 413px) {
-  .cat-item:nth-child(3) {
+  #LandingPage .cat-item:nth-child(3) {
     display: none;
   }
-  .cat-item:nth-child(4) {
+  #LandingPage .cat-item:nth-child(4) {
     display: none;
   }
 }
 
-.cat-last {
+#LandingPage .cat-last {
   width: 100%;
   text-align: center;
   font-size: 1.5rem;
@@ -793,15 +784,44 @@ form .btn:hover {
   margin: 100px 0;
 }
 
+@media (max-width: 413px) {
+  #RegisterStep2 .top {
+    margin: 60px 0;
+  }
+}
+
 #RegisterStep2 .box {
   width: 90%;
   margin: 0 auto;
   background: #252A57;
   border-radius: 30px;
+  margin-bottom: 150px;
 }
 
 #RegisterStep2 .step {
-  padding: 40px 0;
+  padding: 60px 0;
+}
+
+@media (min-width: 1920px) {
+  #RegisterStep2 .step {
+    padding: 110px 0;
+  }
+}
+
+@media (min-width: 414px) and (max-width: 767px) {
+  #RegisterStep2 .step {
+    padding: 30px 0;
+  }
+}
+
+@media (max-width: 413px) {
+  #RegisterStep2 .step {
+    padding: 25px 0;
+  }
+}
+
+#RegisterStep2 .step:last-child {
+  margin-top: 30px;
 }
 
 #RegisterStep2 .item {
@@ -819,6 +839,12 @@ form .btn:hover {
   margin-bottom: 10px;
 }
 
+@media (min-width: 1920px) {
+  #RegisterStep2 .item h3 {
+    margin-bottom: 20px;
+  }
+}
+
 #RegisterStep2 .item input {
   border: none;
   outline: none;
@@ -826,6 +852,24 @@ form .btn:hover {
   font-size: 2rem;
   padding: 15px;
   border-radius: 15px;
+}
+
+@media (min-width: 1920px) {
+  #RegisterStep2 .item {
+    margin: 80px 0;
+  }
+}
+
+@media (min-width: 414px) and (max-width: 767px) {
+  #RegisterStep2 .item {
+    margin: 30px 0;
+  }
+}
+
+@media (max-width: 413px) {
+  #RegisterStep2 .item {
+    margin: 25px 0;
+  }
 }
 
 #RegisterStep2 .item2 {
@@ -836,10 +880,17 @@ form .btn:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin: 20px 0;
 }
 
 #RegisterStep2 .item2 h3 {
   margin-bottom: 50px;
+}
+
+@media (min-width: 414px) and (max-width: 767px) {
+  #RegisterStep2 .item2 h3 {
+    margin-bottom: 20px;
+  }
 }
 
 #RegisterStep2 .btns {
@@ -850,14 +901,175 @@ form .btn:hover {
       justify-content: space-around;
 }
 
+@media (max-width: 767px) {
+  #RegisterStep2 .btns {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 #RegisterStep2 .btns input {
   padding: 20px 0;
-  width: 25%;
+  width: 30%;
+  margin: 10px 0;
+}
+
+@media (max-width: 767px) {
+  #RegisterStep2 .btns input {
+    width: 120%;
+  }
 }
 
 #RegisterStep2 .next-step {
   width: 100%;
   text-align: center;
   margin-top: 100px;
+}
+
+@media (min-width: 768px) and (max-width: 1365px) {
+  #RegisterStep2 .next-step {
+    margin-top: 60px;
+  }
+}
+
+@media (min-width: 414px) and (max-width: 767px) {
+  #RegisterStep2 .next-step {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 413px) {
+  #RegisterStep2 .next-step {
+    margin-top: 30px;
+  }
+}
+
+/**
+*
+* Testing
+*
+**/
+header {
+  /* Navigation */
+}
+
+header .header-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header .container {
+  width: 95%;
+}
+
+@media (min-width: 1920px) {
+  header .container {
+    width: 1700px;
+  }
+}
+
+header button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+header .logo {
+  width: 80px;
+}
+
+@media (min-width: 1920px) {
+  header .logo {
+    width: 120px;
+  }
+}
+
+@media (min-width: 414px) and (max-width: 767px) {
+  header .logo {
+    width: 70px;
+  }
+}
+
+@media (max-width: 413px) {
+  header .logo {
+    width: 60px;
+  }
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .nav-elem {
+  margin-left: 80px;
+}
+
+header .nav-elem:first-child {
+  margin: 0;
+}
+
+header .nav-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px solid #fff;
+  border-radius: 10px;
+}
+
+header .nav-logo {
+  border-right: 2px solid #fff;
+  padding: 8px;
+}
+
+header .nav-logo img {
+  width: 30px;
+}
+
+header .nav-title {
+  font-size: 1.5rem;
+  color: #fff;
+  height: 100%;
+  padding: 8px;
+}
+
+header .dropdown-content {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+header .dropdown-content a {
+  color: #333;
+}
+
+#Main_freelancer header {
+  margin-top: 20px;
 }
 /*# sourceMappingURL=index.css.map */
