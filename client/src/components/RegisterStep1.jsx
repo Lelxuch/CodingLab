@@ -1,7 +1,16 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
+import {login, registration} from "../http/UserAPI";
 
 function Register() {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+    const click = async () => {
+        const response = await registration(email, password);
+        console.log(response)
+    }
+
     return (
         <div id="RegisterStep1">
             <div className="container">
@@ -19,10 +28,14 @@ function Register() {
                 <div class="signin">
                     <form action="#" class="sign-in-form">
                         <h2 class="title">Sign up</h2>
-                        <input type="text" placeholder="Username"/>
-                        <input type="password" placeholder="Password"/>
-                        <input type="password" placeholder="Repeat password"/>
-                        <input type="submit" value="Sign up" class="btn"/>
+                        <input type="email" placeholder="Email"
+                               value={email}
+                               onChange={e => setEmail(e.target.value)}/>
+                        <input type="password" placeholder="Password"
+                               value={password}
+                               onChange={e => setPassword(e.target.value)}/>
+                        <input type="password" placeholder="Repeat password" />
+                        <input type="submit" value="Sign up" onClick={click}  class="btn"/>
                     </form>
                 </div>
             </div>
