@@ -42,7 +42,7 @@ header {
     }
 
     .nav-elem {
-        margin-left: 80px;
+        margin-left: 50px;
         &:first-child {
             margin: 0;
         }
@@ -70,19 +70,28 @@ header {
         padding: 8px;
     }
 
-    .dropdown {
-        
+    .dropdown:hover .dropdown-content {
+        display: flex;
     }
 
     .dropdown-content {
         position: absolute;
-        display: flex;
+        display: none;
         flex-direction: column;
         background: $white;
-        padding: 10px;
         text-align: center;
-        a {
-            color: $black;
-        }
+        min-width: 135px;
+        border-radius: 10px;
+    }
+
+    .nav-link {
+        padding: 15px 0;
+        color: #000;
+        font-size: 1rem;
+        border-radius: 10px;
+    }
+
+    .nav-link:hover {
+        background: #eee;
     }
 }

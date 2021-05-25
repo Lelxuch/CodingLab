@@ -1017,7 +1017,7 @@ header nav {
 }
 
 header .nav-elem {
-  margin-left: 80px;
+  margin-left: 50px;
 }
 
 header .nav-elem:first-child {
@@ -1051,22 +1051,34 @@ header .nav-title {
   padding: 8px;
 }
 
-header .dropdown-content {
-  position: absolute;
+header .dropdown:hover .dropdown-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+header .dropdown-content {
+  position: absolute;
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   background: #fff;
-  padding: 10px;
   text-align: center;
+  min-width: 135px;
+  border-radius: 10px;
 }
 
-header .dropdown-content a {
-  color: #333;
+header .nav-link {
+  padding: 15px 0;
+  color: #000;
+  font-size: 1rem;
+  border-radius: 10px;
+}
+
+header .nav-link:hover {
+  background: #eee;
 }
 
 #Main_freelancer header {
