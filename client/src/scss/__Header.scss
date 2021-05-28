@@ -1,28 +1,21 @@
 @import "../scss/_Variables";
 @import "../scss/_BreakPoints";
 
-header {
-    .header-inner {
+#main-header {
+    width: 95%;
+    margin: 0 auto;
+
+    li {
+        list-style: none;
+    }
+
+    .navbar {
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
 
-    .container {
-        width: 95%;
-        @include media (">=LGdesktop") {
-            width: 1700px;
-        }        
-    }
-
-    button {
-        background: none;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        padding: 0;
-    }
-
-    .logo {
+    .nav-logo img {
         width: 80px;
         @include media (">=LGdesktop") {
             width: 120px;
@@ -34,64 +27,77 @@ header {
             width: 60px;
         }
     }
-
-    /* Navigation */
-    nav {
-        display: flex;
-        align-items: center;
+    
+    .bar {
+        display: block;
+        width: 40px;
+        height: 4px;
+        margin: 10px auto;
+        transition: all 0.3s ease-in-out;
+        background-color: $white;
     }
-
-    .nav-elem {
-        margin-left: 50px;
-        &:first-child {
-            margin: 0;
+    
+    .nav-menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 10;
+        @include media ("<tablet") {
+            position: fixed;
+            left: -100%;
+            top: 100px;
+            flex-direction: column;
+            width: 100%;
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.3s;
+            background: $dark-second-back;
         }
     }
 
+    @include media ("<tablet") {
+        .nav-menu.active {
+            left: 0;
+        } 
+    }
+    
     .nav-item {
-        display: flex;
-        align-items: center;
-        border: 2px solid $white;
-        border-radius: 10px;
-    }
-
-    .nav-logo {
-        img {
-            width: 30px;
+        margin-left: 5rem;
+        @include media ("<tablet") {
+            margin: 2.5rem 0;
         }
-        border-right: 2px solid $white;
-        padding: 8px;
     }
-
-    .nav-title {
-        font-size: 1.5rem;
+    
+    .nav-link{
+        font-size: 2rem;
+        font-weight: 400;
         color: $white;
-        height: 100%;
-        padding: 8px;
+        transition: 0.2s linear;
+    }
+    
+    .nav-link:hover{
+        color: $dark-primary;
     }
 
-    .dropdown:hover .dropdown-content {
-        display: flex;
-    }
-
-    .dropdown-content {
-        position: absolute;
+    .hamburger {
         display: none;
-        flex-direction: column;
-        background: $white;
-        text-align: center;
-        min-width: 135px;
-        border-radius: 10px;
+        @include media ("<tablet") {
+            display: block;
+            cursor: pointer;
+        }
     }
 
-    .nav-link {
-        padding: 15px 0;
-        color: #000;
-        font-size: 1rem;
-        border-radius: 10px;
-    }
+    @include media ("<tablet") {
+        .hamburger.active .bar:nth-child(2) {
+            opacity: 0;
+        }
 
-    .nav-link:hover {
-        background: #eee;
+        .hamburger.active .bar:nth-child(1) {
+            transform: translateY(14px) rotate(45deg);
+        }
+    
+        .hamburger.active .bar:nth-child(3) {
+            transform: translateY(-14px) rotate(-45deg);
+        }
     }
 }

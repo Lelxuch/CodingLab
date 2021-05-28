@@ -1,5 +1,110 @@
+@import "../scss/_Variables";
+@import "../scss/_BreakPoints";
+
 #Main_freelancer {
     header {
         margin-top: 20px;
+    }
+
+    .container {
+        width: 85%;
+        @include media (">=LGdesktop") {
+            width: 1700px;
+        }        
+    }
+    
+    /* Switcher */
+    .switcher {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 50px;
+    }
+
+    .switcher-box {
+        display: flex;
+        border: 3px solid $white;
+        border-radius: 15px;
+    }
+    
+    .switcher-item {
+        width: 150px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 5;
+        font-size: 1.5rem;
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .switcher-active {
+        position: absolute;
+        background: $dark-primary;
+        width: 150px;
+        height: 50px;
+        transition: 0.5s;
+        border-radius: 10px;
+    }
+
+    #nonactive:hover .switcher-active {
+        transform: translateX(100%);
+    }
+
+    .content-nav {
+        display: flex;
+        background: $dark-second-back;
+        margin-top: 50px;
+        padding: 20px;
+        border-radius: 20px;
+        .nav-link {
+            margin: 0px 50px;
+            font-size: 2rem;
+        }
+
+        .nav-link:after{
+            display: block;
+            content: "";
+            background: #fff;
+            margin: 0 auto;
+            height: 0.1875rem;
+            width: 0%;     
+            transition: width 0.2s ease-out;
+        }
+        
+        .nav-link:hover{
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .nav-link:hover:after,
+        .nav-link:focus:after{
+            width: 100%;
+        }
+
+        .nav-link:active:after {
+            width: 100%;
+        }
+    }
+
+    .content {
+        background: $dark-second-back;
+        margin-top: 20px;
+        border-radius: 20px;
+        padding: 20px;
+    }
+
+    /* Default */
+    #main-default {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60vh;
+        font-size: 1.5rem;
     }
 }

@@ -954,11 +954,494 @@ form .btn:hover {
 * Testing
 *
 **/
-header {
-  /* Navigation */
+#main-header {
+  width: 95%;
+  margin: 0 auto;
 }
 
-header .header-inner {
+#main-header li {
+  list-style: none;
+}
+
+#main-header .navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#main-header .nav-logo img {
+  width: 80px;
+}
+
+@media (min-width: 1920px) {
+  #main-header .nav-logo img {
+    width: 120px;
+  }
+}
+
+@media (min-width: 414px) and (max-width: 767px) {
+  #main-header .nav-logo img {
+    width: 70px;
+  }
+}
+
+@media (max-width: 413px) {
+  #main-header .nav-logo img {
+    width: 60px;
+  }
+}
+
+#main-header .bar {
+  display: block;
+  width: 40px;
+  height: 4px;
+  margin: 10px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #fff;
+}
+
+#main-header .nav-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 10;
+}
+
+@media (max-width: 767px) {
+  #main-header .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 100px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    background: #252A57;
+  }
+}
+
+@media (max-width: 767px) {
+  #main-header .nav-menu.active {
+    left: 0;
+  }
+}
+
+#main-header .nav-item {
+  margin-left: 5rem;
+}
+
+@media (max-width: 767px) {
+  #main-header .nav-item {
+    margin: 2.5rem 0;
+  }
+}
+
+#main-header .nav-link {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #fff;
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
+
+#main-header .nav-link:hover {
+  color: #00CFFD;
+}
+
+#main-header .hamburger {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  #main-header .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 767px) {
+  #main-header .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  #main-header .hamburger.active .bar:nth-child(1) {
+    -webkit-transform: translateY(14px) rotate(45deg);
+            transform: translateY(14px) rotate(45deg);
+  }
+  #main-header .hamburger.active .bar:nth-child(3) {
+    -webkit-transform: translateY(-14px) rotate(-45deg);
+            transform: translateY(-14px) rotate(-45deg);
+  }
+}
+
+/**
+*
+* Testing
+*
+**/
+#Main_freelancer {
+  /* Switcher */
+  /* Default */
+}
+
+#Main_freelancer header {
+  margin-top: 20px;
+}
+
+#Main_freelancer .container {
+  width: 85%;
+}
+
+@media (min-width: 1920px) {
+  #Main_freelancer .container {
+    width: 1700px;
+  }
+}
+
+#Main_freelancer .switcher {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-top: 50px;
+}
+
+#Main_freelancer .switcher-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 3px solid #fff;
+  border-radius: 15px;
+}
+
+#Main_freelancer .switcher-item {
+  width: 150px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 5;
+  font-size: 1.5rem;
+}
+
+#Main_freelancer .switcher-item a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+#Main_freelancer .switcher-active {
+  position: absolute;
+  background: #00CFFD;
+  width: 150px;
+  height: 50px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  border-radius: 10px;
+}
+
+#Main_freelancer #nonactive:hover .switcher-active {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+#Main_freelancer .content-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #252A57;
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+#Main_freelancer .content-nav .nav-link {
+  margin: 0px 50px;
+  font-size: 2rem;
+}
+
+#Main_freelancer .content-nav .nav-link:after {
+  display: block;
+  content: "";
+  background: #fff;
+  margin: 0 auto;
+  height: 0.1875rem;
+  width: 0%;
+  -webkit-transition: width 0.2s ease-out;
+  transition: width 0.2s ease-out;
+}
+
+#Main_freelancer .content-nav .nav-link:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+#Main_freelancer .content-nav .nav-link:hover:after,
+#Main_freelancer .content-nav .nav-link:focus:after {
+  width: 100%;
+}
+
+#Main_freelancer .content-nav .nav-link:active:after {
+  width: 100%;
+}
+
+#Main_freelancer .content {
+  background: #252A57;
+  margin-top: 20px;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+#Main_freelancer #main-default {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 60vh;
+  font-size: 1.5rem;
+}
+
+/**
+*
+* Testing
+*
+**/
+#Profile_freelancer {
+  /* Switcher */
+  /* Top block */
+  /* On-Off */
+  /* Lines */
+  /* Nickname */
+  /* Rating */
+  /* Payment */
+  /* Common */
+  /* Portofolio */
+  /* Little big */
+  /* Skills */
+  /* Links */
+  /* Reviews */
+}
+
+#Profile_freelancer header {
+  margin-top: 20px;
+}
+
+#Profile_freelancer .container {
+  width: 85%;
+}
+
+@media (min-width: 1920px) {
+  #Profile_freelancer .container {
+    width: 1700px;
+  }
+}
+
+#Profile_freelancer .switcher {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-top: 50px;
+}
+
+#Profile_freelancer .switcher-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 3px solid #fff;
+  border-radius: 15px;
+}
+
+#Profile_freelancer .switcher-item {
+  width: 150px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 5;
+  font-size: 1.5rem;
+}
+
+#Profile_freelancer .switcher-item a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+#Profile_freelancer .switcher-active {
+  position: absolute;
+  background: #00CFFD;
+  width: 150px;
+  height: 50px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  border-radius: 10px;
+}
+
+#Profile_freelancer #nonactive:hover .switcher-active {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+#Profile_freelancer .big-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#Profile_freelancer .top-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #252A57;
+  border-radius: 20px;
+  padding: 50px;
+  margin-top: 50px;
+  width: 100%;
+}
+
+#Profile_freelancer .top-block img {
+  width: 350px;
+  height: 350px;
+  border-radius: 20px;
+}
+
+#Profile_freelancer .top-block .box {
+  width: 100%;
+  margin-left: 50px;
+}
+
+#Profile_freelancer .on-off-line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 100%;
+}
+
+#Profile_freelancer .on-off {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#Profile_freelancer .on-off .circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+#Profile_freelancer .on-off .circle.green {
+  background: #00FF00;
+}
+
+#Profile_freelancer .on-off .circle.red {
+  background: #FF0000;
+}
+
+#Profile_freelancer .on-off .text {
+  font-size: 1.5rem;
+}
+
+#Profile_freelancer .lines {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 85%;
+}
+
+#Profile_freelancer .nickname {
+  font-size: 3rem;
+}
+
+#Profile_freelancer .rating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#Profile_freelancer .star-icon img {
+  width: 50px;
+  height: 50px;
+}
+
+#Profile_freelancer .score {
+  font-size: 2rem;
+  margin-left: 10px;
+}
+
+#Profile_freelancer .payment-line {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -967,121 +1450,211 @@ header .header-inner {
           justify-content: space-between;
 }
 
-header .container {
-  width: 95%;
+#Profile_freelancer .payment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-@media (min-width: 1920px) {
-  header .container {
-    width: 1700px;
-  }
+#Profile_freelancer .payment-icon img {
+  height: 50px;
+  width: 50px;
 }
 
-header button {
+#Profile_freelancer .payment-money {
+  font-size: 2rem;
+  margin-left: 10px;
+}
+
+#Profile_freelancer .hire-btn {
+  font-size: 2.5rem;
+  outline: none;
+  color: #fff;
+  background: #00CFFD;
+  padding: 15px 30px;
+  border-radius: 10px;
+  border: 3px solid #00CFFD;
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
+
+#Profile_freelancer .hire-btn:hover {
+  background: #252A57;
+  color: #00CFFD;
+}
+
+#Profile_freelancer .common-block {
+  background: #252A57;
+  padding: 50px;
+  margin-top: 50px;
+  border-radius: 20px;
+  width: 100%;
+}
+
+#Profile_freelancer .common-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 3px solid #fff;
+  padding-bottom: 30px;
+}
+
+#Profile_freelancer .common-title {
+  font-size: 2.5rem;
+}
+
+#Profile_freelancer .common-btn {
   background: none;
   border: none;
   outline: none;
-  cursor: pointer;
-  padding: 0;
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear;
 }
 
-header .logo {
-  width: 80px;
+#Profile_freelancer .common-btn img {
+  width: 50px;
+  height: 50px;
 }
 
-@media (min-width: 1920px) {
-  header .logo {
-    width: 120px;
-  }
+#Profile_freelancer .common-btn:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
-@media (min-width: 414px) and (max-width: 767px) {
-  header .logo {
-    width: 70px;
-  }
+#Profile_freelancer .common-content {
+  padding-top: 30px;
 }
 
-@media (max-width: 413px) {
-  header .logo {
-    width: 60px;
-  }
-}
-
-header nav {
+#Profile_freelancer .portfolio {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-header .nav-elem {
-  margin-left: 50px;
+#Profile_freelancer .portfolio-card img {
+  max-width: 250px;
+  border-radius: 20px;
 }
 
-header .nav-elem:first-child {
-  margin: 0;
+#Profile_freelancer .portfolio-card-name {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 10px;
 }
 
-header .nav-item {
+#Profile_freelancer .little-big {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border: 2px solid #fff;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#Profile_freelancer .skills-outer {
+  width: 68%;
+}
+
+#Profile_freelancer .skills {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#Profile_freelancer .skill-name {
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  margin: 10px;
+  background: #fff;
+  color: #333;
   border-radius: 10px;
 }
 
-header .nav-logo {
-  border-right: 2px solid #fff;
-  padding: 8px;
+#Profile_freelancer .links-outer {
+  width: 28%;
 }
 
-header .nav-logo img {
-  width: 30px;
-}
-
-header .nav-title {
-  font-size: 1.5rem;
-  color: #fff;
-  height: 100%;
-  padding: 8px;
-}
-
-header .dropdown:hover .dropdown-content {
+#Profile_freelancer .links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-header .dropdown-content {
-  position: absolute;
-  display: none;
+#Profile_freelancer .link-link {
+  margin: 30px;
+}
+
+#Profile_freelancer .link-link img {
+  width: 60px;
+  height: 60px;
+}
+
+#Profile_freelancer .reviews {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background: #fff;
-  text-align: center;
-  min-width: 135px;
-  border-radius: 10px;
 }
 
-header .nav-link {
-  padding: 15px 0;
-  color: #000;
-  font-size: 1rem;
-  border-radius: 10px;
+#Profile_freelancer .review-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 3px solid #fff;
+  padding-bottom: 50px;
+  margin-top: 50px;
 }
 
-header .nav-link:hover {
-  background: #eee;
+#Profile_freelancer .review-item:first-child {
+  margin-top: 0;
 }
 
-#Main_freelancer header {
-  margin-top: 20px;
+#Profile_freelancer .review-item:last-child {
+  border: none;
+}
+
+#Profile_freelancer .review-img img {
+  width: 250px;
+  height: 250px;
+  border-radius: 20px;
+}
+
+#Profile_freelancer .review-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 30px;
+}
+
+#Profile_freelancer .review-username {
+  font-size: 2.5rem;
+  margin: 30px 0;
+}
+
+#Profile_freelancer .review-text {
+  font-size: 1.5rem;
+  margin-left: 20px;
 }
 /*# sourceMappingURL=index.css.map */

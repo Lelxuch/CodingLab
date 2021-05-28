@@ -2,38 +2,44 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 const Header = () => {
+    window.onload = function(){
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+        const navLink = document.querySelectorAll(".nav-link");
+        hamburger.addEventListener("click", mobileMenu);
+        navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+        function mobileMenu() {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        }
+
+        function closeMenu() {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }
+    }
+
     return (
-        <header>
-            <div className="container header-inner">
-                <div className="nav-brand">
-                    <img src="./images/logo-dark.png" alt="" className="logo" />
+        <header id="main-header">
+            <nav className="navbar">
+                <Link to="main/freelancer" className="nav-logo">
+                    <img src="../images/logo-dark.png" alt="" />
+                </Link>
+                <ul className="nav-menu">
+                    <li className="nav-item">
+                        <Link to className="nav-link">Chat</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/profile/freelancer" className="nav-link"> Profile </Link>
+                    </li>
+                </ul>
+                <div className="hamburger">
+                    <span className="bar"></span>
+                    <span className="bar"></span>
+                    <span className="bar"></span>
                 </div>
-                <nav>
-                    <Link className="nav-item nav-elem">
-                        <div className="nav-logo">
-                            <img src="./images/Header/messenger.png" alt="" />
-                        </div>
-                        <div className="nav-title">
-                            Chat
-                        </div>
-                    </Link >
-                    <div className="dropdown nav-elem">
-                        <button className="nav-item">
-                            <div className="nav-logo">
-                                <img src="./images/Header/avatar.png" alt="" />
-                            </div>
-                            <div className="nav-title">
-                                Profile
-                            </div>
-                        </button>
-                        <div className="dropdown-content">
-                            <Link className="nav-link">View profile</Link>
-                            <Link className="nav-link">Settings</Link>
-                            <button className="nav-link">Log out</button>
-                        </div>
-                    </div>
-                </nav>
-            </div>
+            </nav>
         </header>
     )
 }

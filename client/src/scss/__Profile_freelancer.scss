@@ -1,0 +1,329 @@
+@import "../scss/_Variables";
+@import "../scss/_BreakPoints";
+
+#Profile_freelancer {
+    header {
+        margin-top: 20px;
+    }
+
+    .container {
+        width: 85%;
+        @include media (">=LGdesktop") {
+            width: 1700px;
+        }        
+    }
+
+    $dist-blocks: 50px;
+    $icon-size: 50px;
+
+    /* Switcher */
+    .switcher {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 50px;
+    }
+
+    .switcher-box {
+        display: flex;
+        border: 3px solid $white;
+        border-radius: 15px;
+    }
+    
+    .switcher-item {
+        width: 150px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 5;
+        font-size: 1.5rem;
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .switcher-active {
+        position: absolute;
+        background: $dark-primary;
+        width: 150px;
+        height: 50px;
+        transition: 0.5s;
+        border-radius: 10px;
+    }
+
+    #nonactive:hover .switcher-active {
+        transform: translateX(100%);
+    }
+
+    .big-block {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Top block */
+    .top-block {
+        display: flex;
+        background: $dark-second-back;
+        border-radius: 20px;
+        padding: 50px;
+        margin-top: 50px;
+        width: 100%;
+        img {
+            width: 350px;
+            height: 350px;
+            border-radius: 20px;
+        }
+        .box {
+            width: 100%;
+            margin-left: 50px;
+        }
+    }
+
+    /* On-Off */
+    .on-off-line {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+    }
+
+    .on-off {
+        display: flex;
+        .circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+        .circle.green {
+            background: #00FF00;
+        }
+        .circle.red {
+            background: #FF0000;
+        }
+        .text {
+            font-size: 1.5rem;
+        }
+    }
+
+    /* Lines */
+    .lines {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 85%;
+    }
+
+    /* Nickname */
+    .nickname {
+        font-size: 3rem;
+    }
+
+    /* Rating */
+    .rating {
+        display: flex;
+        align-items: center;
+    }
+
+    .star-icon {
+        img {
+            width: $icon-size;
+            height: $icon-size;
+        }
+    }
+
+    .score {
+        font-size: 2rem;
+        margin-left: 10px;
+    }
+
+    /* Payment */
+    .payment-line {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .payment {
+        display: flex;
+        align-items: center;
+    }
+
+    .payment-icon {
+        img {
+            height: $icon-size;
+            width: $icon-size;
+        }
+    }
+
+    .payment-money {
+        font-size: 2rem;
+        margin-left: 10px;
+    }
+
+    .hire-btn {
+        font-size: 2.5rem;
+        outline: none;
+        color: $white;
+        background: $dark-primary;
+        padding: 15px 30px;
+        border-radius: 10px;
+        border: 3px solid $dark-primary;
+        transition: 0.2s linear;
+    }
+
+    .hire-btn:hover {
+        background: $dark-second-back;
+        color: $dark-primary;
+    }
+
+    /* Common */
+    .common-block {
+        background: $dark-second-back;
+        padding: 50px;
+        margin-top: $dist-blocks;
+        border-radius: 20px;
+        width: 100%;
+    }
+
+    .common-header {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 3px solid $white;
+        padding-bottom: 30px;
+    }
+
+    .common-title {
+        font-size: 2.5rem;
+    }
+
+    .common-btn{
+        background: none;
+        border: none;
+        outline: none;
+        transition: 0.3s linear;
+        img {
+            width: $icon-size;
+            height: $icon-size;
+        }
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    .common-content {
+        padding-top: 30px;
+    }
+
+    /* Portofolio */
+    .portfolio {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .portfolio-card {
+        img {
+            max-width: 250px;
+            border-radius: 20px;
+        }
+    }
+
+    .portfolio-card-name {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    /* Little big */
+    .little-big {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /* Skills */
+    .skills-outer {
+        width: 68%;
+    }
+
+    .skills {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .skill-name {
+        font-size: 1.5rem;
+        padding: 10px 20px;
+        margin: 10px;
+        background: $white;
+        color: $black;
+        border-radius: 10px;
+    }
+
+    /* Links */
+    .links-outer {
+        width: 28%;
+    }
+
+    .links {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .link-link {
+        img {
+            width: $icon-size + 10px;
+            height: $icon-size + 10px; 
+        } 
+        margin: 30px;
+    }
+
+    /* Reviews */
+    .reviews {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .review-item {
+        display: flex;
+        border-bottom: 3px solid $white;
+        padding-bottom: 50px;
+        margin-top: 50px;
+        &:first-child {
+            margin-top: 0;
+        }
+        &:last-child {
+            border: none;
+        }
+    }
+
+    .review-img {
+        img {
+            width: 250px;
+            height: 250px;
+            border-radius: 20px;
+        }
+    }
+
+    .review-header {
+        
+    }
+
+    .review-right {
+        display: flex;
+        flex-direction: column;
+        margin-left: 30px;
+    }
+
+    .review-username {
+        font-size: 2.5rem;
+        margin: 30px 0;
+    }
+
+    .review-text {
+        font-size: 1.5rem;
+        margin-left: 20px;
+    }
+}
