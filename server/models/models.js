@@ -4,19 +4,13 @@ const {DataTypes} = require('sequelize')
 const User = sequelize.define('user', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     email: {type: DataTypes.STRING, unique: true,},
+    username: {type: DataTypes.STRING, unique: true},
     password: {type: DataTypes.STRING},
-    role: {type: DataTypes.STRING, defaultValue: "FREELANCER"},
+    role: {type: DataTypes.STRING, defaultValue: "USER"},
     firstName: {type: DataTypes.STRING},
     lastName: {type: DataTypes.STRING},
-})
-
-const Freelancer = sequelize.define('freelancer', {
-    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    level: {type: DataTypes.STRING, allowNull: false}
-})
-
-const Hirer = sequelize.define('hirer', {
-    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    birthDate: {type: DataTypes.DATE},
+    level: {type: DataTypes.STRING, allowNull: false},
     company: {type: DataTypes.STRING}
 })
 
@@ -72,14 +66,8 @@ const JobCategory = sequelize.define('job_category', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
 })
 
-User.hasOne(Freelancer)
-Freelancer.belongsTo(User)
-
-User.hasOne(Hirer)
-Hirer.belongsTo(User)
-
-Freelancer.hasOne(SkillsList)
-SkillsList.belongsTo(Freelancer)
+User.hasOne(SkillsList)
+SkillsList.belongsTo(User)
 
 SkillsList.hasMany(ListSkill)
 ListSkill.belongsTo(SkillsList)
@@ -87,8 +75,8 @@ ListSkill.belongsTo(SkillsList)
 Skill.hasMany(ListSkill)
 ListSkill.belongsTo(Skill)
 
-Hirer.hasMany(Review)
-Review.belongsTo(Hirer)
+User.hasMany(Review)
+Review.belongsTo(User)
 
 ReviewsList.hasMany(ListReview)
 ListReview.belongsTo(ReviewsList)
@@ -96,11 +84,11 @@ ListReview.belongsTo(ReviewsList)
 Review.hasMany(ListReview)
 ListReview.belongsTo(Review)
 
-Freelancer.hasOne(ReviewsList)
-ReviewsList.belongsTo(Freelancer)
+User.hasOne(ReviewsList)
+ReviewsList.belongsTo(User)
 
-Hirer.hasMany(Job)
-Job.belongsTo(Hirer)
+User.hasMany(Job)
+Job.belongsTo(User)
 
 JobsList.hasMany(ListJob)
 ListJob.belongsTo(JobsList)
@@ -108,16 +96,14 @@ ListJob.belongsTo(JobsList)
 Job.hasMany(ListJob)
 ListJob.belongsTo(Job)
 
-Freelancer.hasOne(JobsList)
-JobsList.belongsTo(Freelancer)
+User.hasOne(JobsList)
+JobsList.belongsTo(User)
 
 Category.belongsToMany(Job, {through: JobCategory})
 Job.belongsToMany(Category, {through: JobCategory})
 
 module.exports = {
     User,
-    Freelancer,
-    Hirer,
     SkillsList,
     Skill,
     ReviewsList,

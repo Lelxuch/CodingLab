@@ -4,7 +4,7 @@ const jobController = require('../controllers/jobController')
 const checkRole = require('../middleware/checkRoleMiddleware')
 
 
-router.post('/', checkRole('ADMIN'), jobController.create)
+router.post('/', jobController.create)
 router.get('/', jobController.getAll)
 router.get('/:id', jobController.getOne)
 
