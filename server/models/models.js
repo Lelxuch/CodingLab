@@ -10,12 +10,7 @@ const User = sequelize.define('user', {
     firstName: {type: DataTypes.STRING},
     lastName: {type: DataTypes.STRING},
     birthDate: {type: DataTypes.DATE},
-    level: {type: DataTypes.STRING, allowNull: false},
     company: {type: DataTypes.STRING}
-})
-
-const SkillsList = sequelize.define('skills_list', {
-    id: {type: DataTypes.INTEGER,  primaryKey: true, autoIncrement: true},
 })
 
 const ListSkill = sequelize.define('list_skill', {
@@ -27,14 +22,6 @@ const Skill = sequelize.define('skill', {
     name: {type: DataTypes.STRING, unique: true, allowNull: false}
 })
 
-const JobsList = sequelize.define('jobs_list', {
-    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-})
-
-const ListJob = sequelize.define('list_job', {
-    id: {type: DataTypes.INTEGER,  primaryKey: true, autoIncrement: true},
-})
-
 const Job = sequelize.define('job', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     name: {type: DataTypes.STRING, allowNull: false},
@@ -43,17 +30,15 @@ const Job = sequelize.define('job', {
     file: {type: DataTypes.STRING}
 })
 
+const JobInfo = sequelize.define('job_info', {
+    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    title: {type: DataTypes.STRING, allowNull: false},
+    description: {type: DataTypes.STRING, allowNull: false}
+})
+
 const Category = sequelize.define('category', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     name: {type: DataTypes.STRING, unique: true, allowNull: false},
-})
-
-const ReviewsList = sequelize.define('reviews_list', {
-    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-})
-
-const ListReview = sequelize.define('list_review', {
-    id: {type: DataTypes.INTEGER,  primaryKey: true, autoIncrement: true},
 })
 
 const Review = sequelize.define('review', {
@@ -62,15 +47,8 @@ const Review = sequelize.define('review', {
     rate: {type: DataTypes.INTEGER, allowNull: false},
 })
 
-const JobCategory = sequelize.define('job_category', {
-    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-})
-
-User.hasOne(SkillsList)
-SkillsList.belongsTo(User)
-
-SkillsList.hasMany(ListSkill)
-ListSkill.belongsTo(SkillsList)
+User.hasMany(ListSkill)
+ListSkill.belongsTo(User)
 
 Skill.hasMany(ListSkill)
 ListSkill.belongsTo(Skill)
@@ -78,37 +56,20 @@ ListSkill.belongsTo(Skill)
 User.hasMany(Review)
 Review.belongsTo(User)
 
-ReviewsList.hasMany(ListReview)
-ListReview.belongsTo(ReviewsList)
-
-Review.hasMany(ListReview)
-ListReview.belongsTo(Review)
-
-User.hasOne(ReviewsList)
-ReviewsList.belongsTo(User)
-
 User.hasMany(Job)
 Job.belongsTo(User)
 
-JobsList.hasMany(ListJob)
-ListJob.belongsTo(JobsList)
+Job.hasMany(JobInfo, {as: 'info'})
+JobInfo.belongsTo(Job)
 
-Job.hasMany(ListJob)
-ListJob.belongsTo(Job)
-
-User.hasOne(JobsList)
-JobsList.belongsTo(User)
-
-Category.belongsToMany(Job, {through: JobCategory})
-Job.belongsToMany(Category, {through: JobCategory})
+Category.hasMany(Job)
+Job.belongsTo(Category)
 
 module.exports = {
     User,
-    SkillsList,
     Skill,
-    ReviewsList,
     Review,
     Job,
     Category,
-    JobCategory
+    JobInfo
 }

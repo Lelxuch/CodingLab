@@ -2,7 +2,6 @@ const {User} = require('../models/models')
 const ApiError = require('../error/ApiError')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-const { validationResult } = require('express-validator')
 
 const generateJwt = (id, email, role) => {
     return jwt.sign(
@@ -14,10 +13,6 @@ const generateJwt = (id, email, role) => {
 
 class UserController {
     async registration(req, res, next) {
-        const errors = validationResult(req)
-        if(!errors.isEmpty()) {
-            return res.status(400).json({message: "Ошибка при регистрации", errors})
-        }
         const {email, password, role} = req.body
         if (!email || !password) {
             return next(ApiError.badRequest('Некорректный email или password'))
