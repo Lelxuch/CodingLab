@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import Footer from '../components/Footer';
+import Footer from '../components/Footer.js';
 
 function LandingPage() {
     return (
@@ -11,7 +11,7 @@ function LandingPage() {
             </header>
 
             <section id="intro">
-                <div className="container intro-inner">
+                <div className="container2 intro-inner">
                     <div className="intro-left">
                         <span className="intro-text">Want to find someone who will turn your ideas into reality?</span>
                         <Link to="/register/1" className="intro-btn">Join us</Link>
@@ -23,7 +23,7 @@ function LandingPage() {
             </section>
 
             <section id="advantages">
-                <div className="container advantages-inner">
+                <div className="container2 advantages-inner">
                     <div className="card">
                         <div className="card-title">Post a job</div>
                         <div className="card-content">
@@ -53,7 +53,7 @@ function LandingPage() {
             </section>
 
             <section id="categories">
-                <div className="container cat-inner">
+                <div className="container2 cat-inner">
                     <h2 className="cat-title">Categories</h2>
                     <div className="cat-row">
                         <div className="cat-item">

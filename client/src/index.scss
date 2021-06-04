@@ -52,7 +52,12 @@ a {
     text-decoration: none;
 }
 
-.container{
+a:hover {
+    text-decoration: none;
+    color: $white;
+}
+
+.container2{
     width: 100%;
     margin: 0 auto;
 }
@@ -61,7 +66,10 @@ a {
 @import "scss/_Footer";
 @import "scss/_LogReg";
 @import "scss/_Register2";
-@import "scss/_Header";
 @import "scss/_Main_freelancer";
-@import "scss/_Profile_freelancer"
-  
+@import "scss/_Main_hirer";
+@import "scss/_Profile_freelancer";
+@import "scss/_Profile_hirer";
+@import "scss/_Settings";
+@import "scss/_Project_info";
+@import "scss/_Header";

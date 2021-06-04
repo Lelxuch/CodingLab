@@ -6,7 +6,7 @@
         margin-top: 20px;
     }
 
-    .container {
+    .container2 {
         width: 85%;
         @include media (">=LGdesktop") {
             width: 1700px;
@@ -43,7 +43,7 @@
         }
     }
 
-    .switcher-active {
+    #switcher-active{
         position: absolute;
         background: $dark-primary;
         width: 150px;
@@ -52,8 +52,9 @@
         border-radius: 10px;
     }
 
-    #nonactive:hover .switcher-active {
+    #nonactive:hover + #switcher-active{
         transform: translateX(100%);
+        background: red;
     }
 
     .content-nav {
@@ -87,7 +88,7 @@
             width: 100%;
         }
 
-        .nav-link:active:after {
+        .nav-link.active:after {
             width: 100%;
         }
     }
@@ -106,5 +107,64 @@
         justify-content: center;
         height: 60vh;
         font-size: 1.5rem;
+    }
+
+    /* requests */
+    .content-requests {
+        display: flex;
+        flex-direction: column;
+        padding: 50px;
+    }
+
+    .request-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50px;
+        &:last-child {
+            margin: 0;
+        }
+    }
+
+    .request-left {
+    }
+
+    .request-title {
+        font-size: 2rem;
+    }
+
+    .request-title:hover {
+        color: $dark-primary;
+    }
+    
+    .request-description {
+        font-size: 1rem;
+        margin-top: 15px;
+        margin-left: 15px;
+    }
+
+    .request-right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        button {
+            border: none;
+            outline: none;
+            width: 100px;
+            padding: 10px 0;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+    }
+
+    .request-accept-btn {
+        background: $green;
+        color: $white;
+    }
+
+    .request-decline-btn {
+        background: $red;
+        color: $white;
     }
 }

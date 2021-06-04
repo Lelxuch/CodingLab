@@ -35,7 +35,7 @@ a {
 /* LandingPage */
 #LandingPage {
     overflow-x: hidden;
-    .container {
+    .container2 {
         width: 85%;
         @include media ('>desktop', '<=LGdesktop') {
             width: 80%;

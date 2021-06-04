@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 function RegisterStep2() {
     return (
         <div id="RegisterStep2">
-            <div className="container">
+            <div className="container2">
                 <div className="top">
                     <h1>Registration is not finished yet. Please tell us more about you </h1>
                 </div>
             </div>
             <div className="box">
-                <div className="container">
+                <div className="container2">
                     <div className="step">
                         <h1>Step 1</h1>
                         <div className="item">

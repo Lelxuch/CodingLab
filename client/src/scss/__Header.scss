@@ -3,16 +3,19 @@
 
 #main-header {
     width: 95%;
+    @include media (">=LGdesktop") {
+        width: 1900px;
+    } 
     margin: 0 auto;
 
     li {
         list-style: none;
     }
 
-    .navbar {
+    .navbar-nav {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
     }
 
     .nav-logo img {

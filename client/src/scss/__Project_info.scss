@@ -1,0 +1,151 @@
+@import "../scss/_Variables";
+@import "../scss/_BreakPoints";
+
+#Project-info {
+    header {
+        margin-top: 20px;
+    }
+
+    .container2 {
+        width: 85%;
+        @include media (">=LGdesktop") {
+            width: 1700px;
+        }        
+    }
+    
+    /* Content */
+    .hirer-profile {
+        display: flex;
+        background: $dark-second-back;
+        border-radius: 20px;
+        padding: 50px;
+        margin-top: 50px;
+    }
+
+    .hirer-img {
+        width: 300px;
+        height: 300px;
+        border-radius: 20px;
+    }
+
+    .hirer-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .hirer-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: 50px;
+        margin-bottom: 100px;
+    }
+
+    .hirer-username {
+        font-size: 3rem;
+    }
+
+    /* Rating */
+    .rating {
+        display: flex;
+        align-items: center;
+    }
+
+    .star-icon {
+        img {
+            width: 50px;
+            height: 50px;
+        }
+    }
+
+    .score {
+        font-size: 2rem;
+        margin-left: 10px;
+    }
+
+    /* Hirer bottom */
+    .hirer-bottom {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+    }
+
+    .hirer-link {
+        font-size: 2.5rem;
+        color: $white;
+        background: $dark-primary;
+        padding: 15px 30px;
+        border-radius: 20px;
+    }
+
+    /* Project details */
+    .project-details {
+        display: flex;
+        flex-direction: column;
+        background: $dark-second-back;
+        padding: 50px;
+        border-radius: 20px;
+        margin-top: 30px;
+    }
+
+    .details-item {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+        &:last-child {
+            margin: 0;
+        }
+        
+    }
+
+    .details-title {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+    
+    .details-content {
+        font-size: 1.5rem;
+        margin-left: 30px;
+    }
+
+    .details-download {
+        background: $dark-primary;
+        color: $white;
+        padding: 15px 30px;
+        border-radius: 10px;
+    }
+
+    .bold {
+        font-weight: 900;
+        font-size: 1.7rem;
+    }
+
+    /* Last decision */
+    .last-des {
+        display: flex;
+        justify-content: center;
+        font-size: 2.5rem;
+        margin-top: 50px;
+    }
+
+    .request-accept-btn {
+        background: $green;
+        color: $white;
+        border: none;
+        outline: none;
+        border-radius: 20px;
+        padding: 15px 30px;
+        margin-right: 50px;
+    }
+
+    .request-decline-btn {
+        background: $red;
+        color: $white;
+        border: none;
+        outline: none;
+        border-radius: 20px;
+        padding: 15px 30px;
+    }
+}

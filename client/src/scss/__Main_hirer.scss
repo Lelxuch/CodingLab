@@ -1,0 +1,213 @@
+@import "../scss/_Variables";
+@import "../scss/_BreakPoints";
+
+#Main_hirer {
+    header {
+        margin-top: 20px;
+    }
+
+    .container2 {
+        width: 85%;
+        @include media (">=LGdesktop") {
+            width: 1700px;
+        }        
+    }
+    
+    /* Switcher */
+    .switcher {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 50px;
+    }
+
+    .switcher-box {
+        display: flex;
+        border: 3px solid $white;
+        border-radius: 15px;
+    }
+    
+    .switcher-item {
+        width: 150px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 5;
+        font-size: 1.5rem;
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    #switcher-active{
+        position: absolute;
+        background: $dark-primary;
+        width: 150px;
+        height: 50px;
+        transition: 0.5s;
+        border-radius: 10px;
+        transform: translateX(100%);
+    }
+
+    #nonactive:hover  #switcher-active{
+        transform: translateX(100%);
+        background: red;
+    }
+
+    .content-nav {
+        display: flex;
+        background: $dark-second-back;
+        margin-top: 50px;
+        padding: 20px;
+        border-radius: 20px;
+        .nav-link {
+            margin: 0px 50px;
+            font-size: 2rem;
+        }
+
+        .nav-link:after{
+            display: block;
+            content: "";
+            background: #fff;
+            margin: 0 auto;
+            height: 0.1875rem;
+            width: 0%;     
+            transition: width 0.2s ease-out;
+        }
+        
+        .nav-link:hover{
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .nav-link:hover:after,
+        .nav-link:focus:after{
+            width: 100%;
+        }
+
+        .nav-link.active:after {
+            width: 100%;
+        }
+    }
+
+    .content {
+        background: $dark-second-back;
+        margin-top: 20px;
+        border-radius: 20px;
+        padding: 50px;
+    }
+
+    /* Default */
+    #main-default {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60vh;
+        font-size: 1.5rem;
+    }
+
+    /* Projects */
+    .project-item {
+        margin-bottom: 50px;
+        &:last-child {
+            margin: 0;
+        }
+    }
+
+    .project-title {
+        font-size: 2.5rem;
+        transition: 0.2s linear;
+    }
+
+    .project-title:hover {
+        color: $dark-primary;
+    }
+
+    .project-description {
+        margin-left: 30px;
+        margin-top: 15px;
+    }
+
+    /* Find */
+    #Find-project {
+        
+    }
+
+    /* Adding project */
+    #Add-project {
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        input {
+            width: 100%;
+            font-size: 1.5rem;
+            padding: 15px 20px;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+        }
+        
+        textarea {
+            width: 100%;
+            height: 200px;
+            font-size: 1.2rem;
+            padding: 15px 20px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+        }
+
+        select {
+            width: 100%;
+            font-size: 1.5rem;
+            padding: 15px 20px;
+        }
+
+        label {
+            font-size: 2rem;
+            width: 100%;
+        }
+
+        .input-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin: 0 auto;
+            margin-bottom: 30px;
+            &:last-child {
+                margin: 0;
+            }
+        }
+
+        .input-upload {
+            border: none;
+            outline: none;
+            background: $white;
+            color: $black;
+        }
+
+        .submit {
+            text-align: center;
+        }
+
+        .submit-btn {
+            color: $white;
+            background: $dark-primary;
+            border: none;
+            outline: none;
+            font-size: 2.5rem;
+            padding: 15px 30px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+    }
+}

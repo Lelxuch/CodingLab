@@ -13,7 +13,7 @@ function Register() {
 
     return (
         <div id="RegisterStep1">
-            <div className="container">
+            <div className="container2">
                 <div class="blocks">
                     <div class="info-block">
                         <div class="info-block-content">
