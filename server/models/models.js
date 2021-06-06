@@ -10,10 +10,24 @@ const User = sequelize.define('user', {
     firstName: {type: DataTypes.STRING},
     lastName: {type: DataTypes.STRING},
     birthDate: {type: DataTypes.DATE},
-    company: {type: DataTypes.STRING}
+    img: {type: DataTypes.STRING}
 })
 
-const ListSkill = sequelize.define('list_skill', {
+const Hirer = sequelize.define('hirer', {
+    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    github: {type: DataTypes.URL},
+    linkedin: {type: DataTypes.URL},
+    rating: {type: DataTypes.FLOAT, defaultValue: 0.0}
+})
+
+const Freelancer = sequelize.define('freelancer', {
+    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    github: {type: DataTypes.URL},
+    linkedin: {type: DataTypes.URL},
+    rating: {type: DataTypes.FLOAT, defaultValue: 0.0}
+})
+
+const FreelancerSkill = sequelize.define('freelancer_skill', {
     id: {type: DataTypes.INTEGER,  primaryKey: true, autoIncrement: true},
 })
 
@@ -22,18 +36,18 @@ const Skill = sequelize.define('skill', {
     name: {type: DataTypes.STRING, unique: true, allowNull: false}
 })
 
-const Job = sequelize.define('job', {
+const Project = sequelize.define('project', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     name: {type: DataTypes.STRING, allowNull: false},
     description: {type: DataTypes.STRING, allowNull: false},
     payment: {type: DataTypes.INTEGER, allowNull: false},
-    file: {type: DataTypes.STRING}
+    file: {type: DataTypes.STRING},
+    status: {type: DataTypes.STRING, defaultValue: "FINDING"}
 })
 
-const JobInfo = sequelize.define('job_info', {
+const Job = sequelize.define('job', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    title: {type: DataTypes.STRING, allowNull: false},
-    description: {type: DataTypes.STRING, allowNull: false}
+    status: {type: DataTypes.STRING, defaultValue: "IN PROCESS"}
 })
 
 const Category = sequelize.define('category', {
@@ -41,35 +55,75 @@ const Category = sequelize.define('category', {
     name: {type: DataTypes.STRING, unique: true, allowNull: false},
 })
 
-const Review = sequelize.define('review', {
+const FreelancerReview = sequelize.define('freelancer_review', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     comment: {type: DataTypes.STRING, allowNull: false},
     rate: {type: DataTypes.INTEGER, allowNull: false},
 })
 
-User.hasMany(ListSkill)
-ListSkill.belongsTo(User)
+const HirerReview = sequelize.define('hirer_review', {
+    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    comment: {type: DataTypes.STRING, allowNull: false},
+    rate: {type: DataTypes.INTEGER, allowNull: false},
+})
 
-Skill.hasMany(ListSkill)
-ListSkill.belongsTo(Skill)
+const Work = sequelize.define('work', {
+    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    name: {type: DataTypes.STRING, allowNull: false},
+    description: {type: DataTypes.STRING, allowNull: false},
+    link: {type: DataTypes.INTEGER, allowNull: false},
+    img: {type: DataTypes.STRING}
+})
 
-User.hasMany(Review)
-Review.belongsTo(User)
+User.hasOne(Freelancer)
+Freelancer.belongsTo(User)
 
-User.hasMany(Job)
-Job.belongsTo(User)
+User.hasOne(Hirer)
+Hirer.belongsTo(User)
 
-Job.hasMany(JobInfo, {as: 'info'})
-JobInfo.belongsTo(Job)
+Freelancer.hasMany(FreelancerSkill)
+FreelancerSkill.belongsTo(Freelancer)
 
-Category.hasMany(Job)
-Job.belongsTo(Category)
+Skill.hasMany(FreelancerSkill)
+FreelancerSkill.belongsTo(Skill)
+
+Hirer.hasMany(Project)
+Project.belongsTo(Hirer)
+
+Category.hasMany(Project)
+Project.belongsTo(Category)
+
+Freelancer.hasMany(Job)
+Job.belongsTo(Freelancer)
+
+Project.hasOne(Job)
+Job.belongsTo(Project)
+
+Freelancer.hasMany(Work)
+Work.belongsTo(Freelancer)
+
+Freelancer.hasMany(FreelancerReview)
+FreelancerReview.belongsTo(Freelancer)
+
+Hirer.hasMany(HirerReview)
+HirerReview.belongsTo(Hirer)
+
+Hirer.hasMany(FreelancerReview)
+FreelancerReview.belongsTo(Hirer)
+
+Freelancer.hasMany(HirerReview)
+HirerReview.belongsTo(Freelancer)
 
 module.exports = {
     User,
+    Hirer,
+    Freelancer,
     Skill,
-    Review,
-    Job,
+    FreelancerSkill,
+    Project,
     Category,
-    JobInfo
+    Job,
+    Work,
+    FreelancerReview,
+    HirerReview
 }
