@@ -11,6 +11,17 @@ class CategoryController {
         const categories = await Category.findAll()
         return res.json(categories)
     }
+
+    async getOne(req, res) {
+        const {id} = req.params
+        const category = await Category.findOne(
+            {
+                where: {id},
+
+            },
+        )
+        return res.json(category)
+    }
 }
 
 module.exports = new CategoryController()

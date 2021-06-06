@@ -5,29 +5,7 @@ const ApiError = require('../error/ApiError')
 
 class JobController {
     async create(req, res, next) {
-        try {
-            let {name, description, payment, userId, categoryId, info} = req.body
-            const {file} = req.files
-            let fileName = uuid.v4() + ".docx"
-            file.mv(path.resolve(__dirname, '..', 'static', fileName))
 
-            if (info) {
-                info = JSON.parse(info)
-                info.forEach(i =>
-                    JobInfo.create({
-                        title: i.title,
-                        description: i.description,
-                        jobId: job.id
-                    })
-                )
-            }
-
-            const job = await Job.create({name, description, payment, userId, categoryId, file: fileName})
-
-            return res.json(job)
-        } catch (e) {
-            next(ApiError.badRequest(e.message))
-        }
     }
 
     async getAll(req, res) {
@@ -57,10 +35,22 @@ class JobController {
         const job = await Job.findOne(
             {
                 where: {id},
-                include: [{model: JobInfo, as: 'info'}]
+
             },
         )
         return res.json(job)
+    }
+
+    async getStatus(req, res) {
+
+    }
+
+    async changeStatus(req, res) {
+
+    }
+
+    async delete(req, res) {
+
     }
 }
 

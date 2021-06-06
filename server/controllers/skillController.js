@@ -13,6 +13,9 @@ class SkillController {
         return res.json(skills)
     }
 
+    async delete(req, res) {
+
+    }
 }
 
 module.exports = new SkillController()

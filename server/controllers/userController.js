@@ -12,7 +12,7 @@ const generateJwt = (id, email, role) => {
 }
 
 class UserController {
-    async registration(req, res, next) {
+    async registration1(req, res, next) {
         const {email, password, role} = req.body
         if (!email || !password) {
             return next(ApiError.badRequest('Некорректный email или password'))
@@ -26,6 +26,10 @@ class UserController {
 
         const token = generateJwt(user.id, user.email, user.role)
         return res.json({token})
+    }
+
+    async registration2(req, res, next) {
+
     }
 
     async login(req, res, next) {
@@ -45,6 +49,14 @@ class UserController {
     async check(req, res, next) {
         const token = generateJwt(req.user.id, req.user.email, req.user.role)
         return res.json({token})
+    }
+
+    async changeRole(req, res, next) {
+
+    }
+
+    async changePassword(req, res, next) {
+
     }
 
     async delete(req, res, next) {
