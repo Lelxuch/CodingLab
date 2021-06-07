@@ -29,7 +29,18 @@ class UserController {
     }
 
     async registration2(req, res, next) {
+        const token = req.headers.authorization.split(' ')[1]
+        if (!token) {
+            return res.status(401).json({message: "Не авторизован"})
+        }
+        const decoded = jwt.verify(token, process.env.SECRET_KEY)
 
+        const user = await User.update(
+            {username: req.body.username, firstName: req.body.firstName, lastName: req.body.lastName, role: req.body.role},
+            {returning: true, where: {id: decoded.id}}
+        )
+
+        return res.json({user})
     }
 
     async login(req, res, next) {
@@ -56,11 +67,37 @@ class UserController {
     }
 
     async changePassword(req, res, next) {
+        const {password} = req.body
+        if (!password) {
+            return next(ApiError.badRequest('Некорректный password'))
+        }
+        const hashPassword = await bcrypt.hash(password, 5)
+        const token = req.headers.authorization.split(' ')[1]
+        if (!token) {
+            return res.status(401).json({message: "Не авторизован"})
+        }
+        const decoded = jwt.verify(token, process.env.SECRET_KEY)
 
+        const user = await User.update(
+            {password: hashPassword},
+            {returning: true, where: {id: decoded.id}}
+        )
+
+        return res.json({user})
     }
 
     async delete(req, res, next) {
-
+        try{
+            const token = req.headers.authorization.split(' ')[1]
+            if (!token) {
+                return res.status(401).json({message: "Не авторизован"})
+            }
+            const decoded = jwt.verify(token, process.env.SECRET_KEY)
+            const user = await User.destroy({where:{id: decoded.id},})
+            return res.json(user)
+        }catch (e){
+            next(ApiError.badRequest(e.message))
+        }
     }
 }
 
