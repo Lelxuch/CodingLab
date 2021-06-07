@@ -16,15 +16,15 @@ const User = sequelize.define('user', {
 
 const Hirer = sequelize.define('hirer', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    github: {type: DataTypes.URL},
-    linkedin: {type: DataTypes.URL},
+    github: {type: DataTypes.TEXT},
+    linkedin: {type: DataTypes.TEXT},
     rating: {type: DataTypes.FLOAT, defaultValue: 0.0}
 })
 
 const Freelancer = sequelize.define('freelancer', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    github: {type: DataTypes.URL},
-    linkedin: {type: DataTypes.URL},
+    github: {type: DataTypes.TEXT},
+    linkedin: {type: DataTypes.TEXT},
     rating: {type: DataTypes.FLOAT, defaultValue: 0.0}
 })
 
