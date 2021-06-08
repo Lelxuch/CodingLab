@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import Header from '../components/Header.js'
+import Browse from '../components/Browse.js'
 
 
 function Main_freelancer() {
@@ -23,8 +24,8 @@ function Main_freelancer() {
                 <Link to="/main/freelancer/browse" className="nav-link active">Browse job</Link>
                 <Link to="/main/freelancer/requests" className="nav-link">Requests</Link>
             </nav>
-            <div className="content container2">
-                Browse
+            <div className="content container2 browse-content">
+                <Browse />
             </div>
         </div>
     );

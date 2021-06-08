@@ -54,7 +54,7 @@ function Main_freelancer() {
                         </div>
                     </div>
                     <div className="details-item">
-                        <div className="details-title">Price</div>
+                        <div className="details-title">Payment</div>
                         <div className="details-content">
                             100$
                         </div>

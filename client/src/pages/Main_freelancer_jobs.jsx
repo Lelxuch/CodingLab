@@ -24,7 +24,7 @@ function Main_freelancer() {
                 <Link to="/main/freelancer/browse" className="nav-link">Browse job</Link>
                 <Link to="/main/freelancer/requests" className="nav-link">Requests</Link>
             </nav>
-            <div className="content container2 content-job">
+            <div className="content container2 content-jobs">
                 <Jobs />
             </div>
         </div>

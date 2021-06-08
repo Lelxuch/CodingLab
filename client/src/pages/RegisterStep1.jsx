@@ -22,7 +22,7 @@ function Register() {
                             </h3>
                             <Link to="/login">Sign in</Link>
                         </div>
-                        <img src="./images/LogReg/Secure.svg" class="info-block-image" alt=""/>
+                        <img src="../images/LogReg/Marketing.svg" class="info-block-image" alt=""/>
                     </div>
                 </div>
                 <div class="signin">
