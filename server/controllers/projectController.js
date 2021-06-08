@@ -20,7 +20,7 @@ class ProjectController {
         }
     }
 
-    async getAll(req, res) {
+    async getAll(req, res, next) {
         try{
             let {payment, categoryId, limit, page} = req.query
             page = page || 1
