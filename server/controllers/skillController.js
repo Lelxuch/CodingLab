@@ -1,5 +1,6 @@
 const {Skill} = require('../models/models')
 const ApiError = require('../error/ApiError')
+const jwt = require("jsonwebtoken");
 
 class SkillController {
     async create(req, res) {
@@ -13,8 +14,19 @@ class SkillController {
         return res.json(skills)
     }
 
-    async delete(req, res) {
-
+    async delete(req, res, next) {
+        try{
+            const {id} = req.body
+            const token = req.headers.authorization.split(' ')[1]
+            if (!token) {
+                return res.status(401).json({message: "Не авторизован"})
+            }
+            const decoded = jwt.verify(token, process.env.SECRET_KEY)
+            const skill = await Skill.destroy({where:{id,}})
+            return res.json(skill)
+        }catch (e){
+            next(ApiError.badRequest(e.message))
+        }
     }
 }
 

@@ -1,11 +1,22 @@
+const path = require('path')
 const {Work} = require('../models/models')
 const ApiError = require('../error/ApiError')
+const jwt = require("jsonwebtoken");
 
 class WorkController {
-    async create(req, res) {
-        const {name} = req.body
-        const work = await Work.create({name})
-        return res.json(work)
+    async create(req, res, next) {
+        try {
+            let {name, description, link, freelancerId} = req.body
+            const {img} = req.files
+            let fileName = uuid.v4() + ".docx"
+            img.mv(path.resolve(__dirname, '..', 'static', fileName))
+
+            const work = await Work.create({name, description, link, freelancerId, img: fileName})
+
+            return res.json(work)
+        } catch (e) {
+            next(ApiError.badRequest(e.message))
+        }
     }
 
     async getAll(req, res) {
@@ -18,18 +29,43 @@ class WorkController {
         const work = await Work.findOne(
             {
                 where: {id},
-
             },
         )
         return res.json(work)
     }
 
-    async edit(req, res) {
+    async edit(req, res, next) {
+        try{
+            let {id, name, description, link} = req.body
+            const {img} = req.files
+            let fileName = uuid.v4() + ".docx"
+            img.mv(path.resolve(__dirname, '..', 'static', fileName))
 
+
+            const work = await Work.update(
+                {name: name, description: description, link: link, img: fileName},
+                {returning: true, where: {id}}
+            )
+
+            return res.json({work})
+        }catch (e){
+            next(ApiError.badRequest(e.message))
+        }
     }
 
-    async delete(req, res) {
-
+    async delete(req, res, next) {
+        try{
+            const {id} = req.body
+            const token = req.headers.authorization.split(' ')[1]
+            if (!token) {
+                return res.status(401).json({message: "Не авторизован"})
+            }
+            const decoded = jwt.verify(token, process.env.SECRET_KEY)
+            const work = await Work.destroy({where:{id,}})
+            return res.json(work)
+        }catch (e){
+            next(ApiError.badRequest(e.message))
+        }
     }
 }
 
