@@ -3,15 +3,23 @@ const ApiError = require('../error/ApiError')
 const jwt = require("jsonwebtoken");
 
 class FreelancerSkillController {
-    async create(req, res) {
-        const {freelancerId, skillId} = req.body
-        const freelancerSkill = await FreelancerSkill.create({freelancerId, skillId})
-        return res.json(freelancerSkill)
+    async create(req, res, next) {
+        try{
+            const {freelancerId, skillId} = req.body
+            const freelancerSkill = await FreelancerSkill.create({freelancerId, skillId})
+            return res.json(freelancerSkill)
+        }catch (e){
+            next(ApiError.badRequest(e.message))
+        }
     }
 
-    async getAll(req, res) {
-        const freelancerSkills = await FreelancerSkill.findAll()
-        return res.json(freelancerSkills)
+    async getAll(req, res, next) {
+        try{
+            const freelancerSkills = await FreelancerSkill.findAll()
+            return res.json(freelancerSkills)
+        }catch (e){
+            next(ApiError.badRequest(e.message))
+        }
     }
 
     async delete(req, res, next) {

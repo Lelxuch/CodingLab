@@ -21,36 +21,44 @@ class ProjectController {
     }
 
     async getAll(req, res) {
-        let {payment, categoryId, limit, page} = req.query
-        page = page || 1
-        limit = limit || 9
-        let offset = page * limit - limit
-        let projects;
-        if(!payment && !categoryId) {
-            projects = await Project.findAndCountAll({limit, offset})
+        try{
+            let {payment, categoryId, limit, page} = req.query
+            page = page || 1
+            limit = limit || 9
+            let offset = page * limit - limit
+            let projects;
+            if (!payment && !categoryId) {
+                projects = await Project.findAndCountAll({limit, offset})
+            }
+            if (payment && !categoryId) {
+                projects = await Project.findAndCountAll({where: {payment}, limit, offset})
+            }
+            if (!payment && categoryId) {
+                projects = await Project.findAndCountAll({where: {categoryId}, limit, offset})
+            }
+            if (payment && categoryId) {
+                projects = await Project.findAndCountAll({where: {payment, categoryId}, limit, offset})
+            }
+            return res.json(projects)
+        }catch (e){
+            next(ApiError.badRequest(e.message))
         }
-        if(payment && !categoryId) {
-            projects = await Project.findAndCountAll({where:{payment}, limit, offset})
-        }
-        if(!payment && categoryId) {
-            projects = await Project.findAndCountAll({where:{categoryId}, limit, offset})
-        }
-        if(payment && categoryId) {
-            projects = await Project.findAndCountAll({where:{payment, categoryId}, limit, offset})
-        }
-        return res.json(projects)
     }
 
 
-    async getOne(req, res) {
-        const {id} = req.params
-        const project = await Project.findOne(
-            {
-                where: {id},
+    async getOne(req, res, next) {
+        try{
+            const {id} = req.params
+            const project = await Project.findOne(
+                {
+                    where: {id},
 
-            },
-        )
-        return res.json(project)
+                },
+            )
+            return res.json(project)
+        }catch (e){
+            next(ApiError.badRequest(e.message))
+        }
     }
 
     async edit(req, res, next) {
@@ -113,11 +121,6 @@ class ProjectController {
     async delete(req, res, next) {
         try{
             const {id} = req.body
-            const token = req.headers.authorization.split(' ')[1]
-            if (!token) {
-                return res.status(401).json({message: "Не авторизован"})
-            }
-            const decoded = jwt.verify(token, process.env.SECRET_KEY)
             const project = await Project.destroy({where:{id},})
             return res.json(project)
         }catch (e){
