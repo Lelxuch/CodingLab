@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/codinglab/static/css/main.0efa89f4.chunk.css",
+    "main.js": "/codinglab/static/js/main.af4ca4ee.chunk.js",
+    "main.js.map": "/codinglab/static/js/main.af4ca4ee.chunk.js.map",
+    "runtime-main.js": "/codinglab/static/js/runtime-main.d661ba86.js",
+    "runtime-main.js.map": "/codinglab/static/js/runtime-main.d661ba86.js.map",
+    "static/js/2.fd46226d.chunk.js": "/codinglab/static/js/2.fd46226d.chunk.js",
+    "static/js/2.fd46226d.chunk.js.map": "/codinglab/static/js/2.fd46226d.chunk.js.map",
+    "static/js/3.e231c43f.chunk.js": "/codinglab/static/js/3.e231c43f.chunk.js",
+    "static/js/3.e231c43f.chunk.js.map": "/codinglab/static/js/3.e231c43f.chunk.js.map",
+    "index.html": "/codinglab/index.html",
+    "static/css/main.0efa89f4.chunk.css.map": "/codinglab/static/css/main.0efa89f4.chunk.css.map",
+    "static/js/2.fd46226d.chunk.js.LICENSE.txt": "/codinglab/static/js/2.fd46226d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d661ba86.js",
+    "static/js/2.fd46226d.chunk.js",
+    "static/css/main.0efa89f4.chunk.css",
+    "static/js/main.af4ca4ee.chunk.js"
+  ]
+}
