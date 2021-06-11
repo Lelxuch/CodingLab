@@ -46,9 +46,9 @@ function Profile_freelancer() {
                             <div className="common-title">
                                 Skills
                             </div>
-                            <button className="common-btn">
+                            <Link className="common-btn" to="/profile/edit/skills">
                                 <img src="../../images/Profile/edit.png" alt="" />
-                            </button>
+                            </Link>
                         </div>
                         <div className="common-content skills">
                             <Skill_item />

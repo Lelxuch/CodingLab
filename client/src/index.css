@@ -1335,7 +1335,6 @@ footer {
 #Main_freelancer .browse-item {
   padding: 50px 0;
   border-bottom: 3px solid #fff;
-  width: 90%;
   margin: 0 auto;
 }
 
@@ -1618,7 +1617,7 @@ footer {
   padding: 50px;
 }
 
-#Main_hirer #main-default {
+#Main_hirer #Main-default {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1632,7 +1631,7 @@ footer {
   font-size: 1.5rem;
 }
 
-#Main_hirer .projects {
+#Main_hirer #Projects .projects {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1642,7 +1641,7 @@ footer {
           flex-direction: column;
 }
 
-#Main_hirer .projects-filter {
+#Main_hirer #Projects .projects-filter {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1651,7 +1650,7 @@ footer {
           justify-content: flex-end;
 }
 
-#Main_hirer .projects-filter select {
+#Main_hirer #Projects .projects-filter select {
   font-size: 1.25rem;
   padding: 5px 10px;
   border: none;
@@ -1659,30 +1658,261 @@ footer {
   border-radius: 10px;
 }
 
-#Main_hirer .project-item {
+#Main_hirer #Projects .project-item {
   padding: 50px 0;
   border-bottom: 3px solid #fff;
 }
 
-#Main_hirer .project-item:last-child {
+#Main_hirer #Projects .project-item:last-child {
   padding-bottom: 0;
   border-bottom: 0;
 }
 
-#Main_hirer .project-title {
+#Main_hirer #Projects .project-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#Main_hirer #Projects .project-title {
   font-size: 2rem;
   -webkit-transition: 0.2s linear;
   transition: 0.2s linear;
 }
 
-#Main_hirer .project-title:hover {
+#Main_hirer #Projects .project-status {
+  border: 2px solid #fff;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+#Main_hirer #Projects .project-title:hover {
   color: #00CFFD;
 }
 
-#Main_hirer .project-description {
+#Main_hirer #Projects .project-description {
   margin-left: 30px;
   margin-top: 10px;
   font-size: 1.25rem;
+}
+
+#Main_hirer #Find-freelancer .freelancer-filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-bottom: 30px;
+  border-bottom: 3px solid #00CFFD;
+}
+
+#Main_hirer #Find-freelancer .freelancer-filter .title {
+  font-size: 2.5rem;
+}
+
+#Main_hirer #Find-freelancer .freelancer-filter .freelancer-filter-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 30px;
+  margin-bottom: 20px;
+}
+
+#Main_hirer #Find-freelancer .freelancer-filter .freelancer-filter-item:last-child {
+  margin-bottom: 0;
+}
+
+#Main_hirer #Find-freelancer .freelancer-filter .freelancer-filter-item .title {
+  font-size: 1.75rem;
+  margin-right: 10px;
+}
+
+#Main_hirer #Find-freelancer .freelancer-filter .freelancer-filter-item input {
+  border: none;
+  outline: none;
+  padding: 5px 15px;
+  border-radius: 10px;
+}
+
+#Main_hirer #Find-freelancer .freelancer-filter .freelancer-filter-item.rating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#Main_hirer #Find-freelancer .freelancer-filter .freelancer-filter-item.rating input {
+  margin-right: 5px;
+}
+
+#Main_hirer #Find-freelancer .freelancer-filter .skills-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#Main_hirer #Find-freelancer .freelancer-filter .skills-content .skills-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: #fff;
+  border-radius: 10px;
+}
+
+#Main_hirer #Find-freelancer .freelancer-filter .skills-content .skills-item .skill-item-name {
+  padding: 5px 15px;
+  padding-right: 5px;
+  font-size: 1rem;
+  color: #251F41;
+}
+
+#Main_hirer #Find-freelancer .freelancer-filter .skills-content .skills-item button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+#Main_hirer #Find-freelancer .freelancer-filter .skills-content .skills-item button span {
+  -webkit-transition: 0.1s linear;
+  transition: 0.1s linear;
+}
+
+#Main_hirer #Find-freelancer .freelancer-filter .skills-content .skills-item button:hover span {
+  color: #00CFFD;
+}
+
+#Main_hirer #Find-freelancer .freelancer-filter .skills-content .modal-title {
+  color: #333;
+}
+
+#Main_hirer #Find-freelancer .freelancer-filter .skills-content .add-btn {
+  font-size: 1.25rem;
+  background: #00FF00;
+  padding: 5px 15px;
+  border-radius: 10px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+#Main_hirer #Find-freelancer .freelancer-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 auto;
+}
+
+#Main_hirer #Find-freelancer .freelancer-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 50px 0;
+  border-bottom: 3px solid #fff;
+}
+
+#Main_hirer #Find-freelancer .freelancer-item:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+#Main_hirer #Find-freelancer .freelancer-left img {
+  width: 250px;
+  height: 250px;
+  border-radius: 20px;
+}
+
+#Main_hirer #Find-freelancer .freelancer-right {
+  margin-left: 30px;
+  margin-top: 15px;
+  width: 100%;
+}
+
+#Main_hirer #Find-freelancer .freelancer-right-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+#Main_hirer #Find-freelancer .freelancer-title {
+  font-size: 2rem;
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
+
+#Main_hirer #Find-freelancer .freelancer-rating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#Main_hirer #Find-freelancer .freelancer-rating img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+#Main_hirer #Find-freelancer .freelancer-rating .title {
+  font-size: 1.25rem;
+}
+
+#Main_hirer #Find-freelancer .freelancer-title:hover {
+  color: #00CFFD;
+}
+
+#Main_hirer #Find-freelancer .freelancer-skills {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+#Main_hirer #Find-freelancer .skill-item {
+  font-size: 1.25rem;
+  background: #fff;
+  color: #333;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-right: 10px;
+  margin-top: 15px;
 }
 
 #Main_hirer #Add-project form {
@@ -1771,6 +2001,82 @@ footer {
   padding: 15px 30px;
   border-radius: 15px;
   margin-top: 20px;
+}
+
+#Main_hirer #Add-project .project-skills {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+}
+
+#Main_hirer #Add-project .skills-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#Main_hirer #Add-project .skills-content .skills-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: #fff;
+  border-radius: 10px;
+}
+
+#Main_hirer #Add-project .skills-content .skills-item .skill-item-name {
+  padding: 5px 15px;
+  padding-right: 5px;
+  font-size: 1rem;
+  color: #251F41;
+}
+
+#Main_hirer #Add-project .skills-content .skills-item button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+#Main_hirer #Add-project .skills-content .skills-item button span {
+  -webkit-transition: 0.1s linear;
+  transition: 0.1s linear;
+}
+
+#Main_hirer #Add-project .skills-content .skills-item button:hover span {
+  color: #00CFFD;
+}
+
+#Main_hirer #Add-project .skills-content .modal-title {
+  color: #333;
+}
+
+#Main_hirer #Add-project .skills-content .add-btn {
+  font-size: 1.25rem;
+  background: #00FF00;
+  padding: 5px 15px;
+  border-radius: 10px;
+  margin-left: 20px;
+  cursor: pointer;
 }
 
 /**
@@ -2809,6 +3115,68 @@ footer {
   #Profile_hirer .review-text {
     margin-left: 10px;
   }
+}
+
+/**
+*
+* Testing
+*
+**/
+#Profiles header {
+  margin-top: 20px;
+}
+
+#Profiles .container2 {
+  width: 85%;
+}
+
+@media (min-width: 1920px) {
+  #Profiles .container2 {
+    width: 1700px;
+  }
+}
+
+#Profiles .profile-edit-content {
+  background: #252A57;
+  margin-top: 50px;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+#Profiles .profile-edit-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 3px solid #fff;
+  padding-bottom: 30px;
+}
+
+#Profiles .profile-edit-top .title {
+  font-size: 2.5rem;
+}
+
+#Profiles .profile-edit-top .btn {
+  padding: 0;
+  padding: 0 25px;
+  background: #00FF00;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+}
+
+#Profiles .profile-edit-box {
+  padding-top: 30px;
+}
+
+#Profiles .profile-edit-box .skills {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 #Profile_settings header {

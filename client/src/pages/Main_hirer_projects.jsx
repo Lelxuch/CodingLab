@@ -23,7 +23,7 @@ function Main_freelancer() {
                 <Link to="/main/hirer/find" className="nav-link">Find freelancer</Link>
                 <Link to="/main/hirer/post" className="nav-link">Post project</Link>
             </nav>
-            <div className="content container2">
+            <div className="content container2" id="Projects">
                 <Projects />
             </div>
         </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Header from '../components/Header.js'
-import Find_project from '../components/Find_project.js'
+import Find_project from '../components/Find_freelancer.js'
   
 function Main_freelancer() {
     return (
@@ -14,7 +14,7 @@ function Main_freelancer() {
                     </div>
                     <div className="switcher-item">
                         <Link to="/main/hirer" id="nonactive">Hirer</Link>
-                    </div>
+                     </div>
                     <div id="switcher-active"></div>
                 </div>
             </div>
