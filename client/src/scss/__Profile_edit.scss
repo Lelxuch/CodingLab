@@ -40,9 +40,56 @@
 
     .profile-edit-box {
         padding-top: 30px;
-        .skills {
+    }
+
+    /* Skills */
+    .skills-content{
+        display: flex;
+        align-items: center;
+        .skills-item {
             display: flex;
-            flex-wrap: wrap;
+            justify-content: space-between;
+            background: $white;
+            border-radius: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            .skill-item-name {
+                padding: 5px 15px;
+                padding-right: 5px;
+                font-size: 1rem;
+                color: $dark-back;
+            }
+            button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: none;
+                outline: none;
+                background: none;
+                padding: 0 10px;
+                cursor: pointer;
+                span {
+                    transition: 0.1s linear;
+                }
+                &:hover {
+                    span {
+                        color: $dark-primary;
+                    }
+                }
+            }
+        }
+        .modal-title {
+            color: $black;
+        }
+        .add-btn {
+            font-size: 1.25rem;
+            background: $green;
+            padding: 5px 15px;
+            border-radius: 10px;
+            margin-left: 20px;
+            cursor: pointer;
         }
     }
+
+    /* Links content */
 }

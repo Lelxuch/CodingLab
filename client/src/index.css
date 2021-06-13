@@ -3122,6 +3122,10 @@ footer {
 * Testing
 *
 **/
+#Profiles {
+  /* Skills */
+}
+
 #Profiles header {
   margin-top: 20px;
 }
@@ -3171,12 +3175,72 @@ footer {
   padding-top: 30px;
 }
 
-#Profiles .profile-edit-box .skills {
+#Profiles .skills-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#Profiles .skills-content .skills-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: #fff;
+  border-radius: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+#Profiles .skills-content .skills-item .skill-item-name {
+  padding: 5px 15px;
+  padding-right: 5px;
+  font-size: 1rem;
+  color: #251F41;
+}
+
+#Profiles .skills-content .skills-item button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+#Profiles .skills-content .skills-item button span {
+  -webkit-transition: 0.1s linear;
+  transition: 0.1s linear;
+}
+
+#Profiles .skills-content .skills-item button:hover span {
+  color: #00CFFD;
+}
+
+#Profiles .skills-content .modal-title {
+  color: #333;
+}
+
+#Profiles .skills-content .add-btn {
+  font-size: 1.25rem;
+  background: #00FF00;
+  padding: 5px 15px;
+  border-radius: 10px;
+  margin-left: 20px;
+  cursor: pointer;
 }
 
 #Profile_settings header {
