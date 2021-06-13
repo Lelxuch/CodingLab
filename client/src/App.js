@@ -6,7 +6,8 @@ import RegisterStep1 from './pages/RegisterStep1'
 import RegisterStep2 from './pages/RegisterStep2'
 import Profile_freelancer from './pages/Profile_freelancer'
 import Profile_hirer from './pages/Profile_hirer'
-import Profile_skills from './pages/Profile_skills'
+import Profile_edit_skills from './pages/Profile_edit_skills'
+import Profile_edit_links from './pages/Profile_edit_links'
 import Profile_settings_personal from './pages/Settings_personal'
 import Profile_settings_password from './pages/Settings_password'
 import Main_freelancer from './pages/Main_freelancer'
@@ -53,7 +54,8 @@ const App = observer(() => {
                     <Route exact path="/main/hirer/find" component={Main_hirer_find} />
                     <Route exact path="/main/hirer/post" component={Main_hirer_post} />
                     <Route exact path="/profile/freelancer/view" component={Profile_freelancer} />
-                    <Route exact path="/profile/edit/skills" component ={Profile_skills} />
+                    <Route exact path="/profile/edit/skills" component ={Profile_edit_skills} />
+                    <Route exact path="/profile/edit/links" component ={Profile_edit_links} />
                     <Route exact path="/profile/hirer/view" component={Profile_hirer} />
                     <Route exact path="/profile/settings/personal" component={Profile_settings_personal} />
                     <Route exact path="/profile/settings/password" component={Profile_settings_password} />
