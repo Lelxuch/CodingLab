@@ -3123,7 +3123,7 @@ footer {
 *
 **/
 #Profiles {
-  /*  */
+  /* portfolios content */
   /* Skills */
   /* Links content */
 }
@@ -3178,6 +3178,167 @@ footer {
 
 #Profiles .modal-title {
   color: #333;
+}
+
+#Profiles .portfolio-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#Profiles .portfolio-content .portfolio-item {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3fr 1fr;
+      grid-template-columns: 3fr 1fr;
+  font-size: 1.25rem;
+  border: 2px solid #fff;
+}
+
+#Profiles .portfolio-content .portfolio-title-link {
+  -webkit-transition: 0.15s linear;
+  transition: 0.15s linear;
+}
+
+#Profiles .portfolio-content .portfolio-title-link:hover {
+  color: #00CFFD;
+}
+
+#Profiles .portfolio-content .portfolio-item-elem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-right: 2px solid #fff;
+}
+
+#Profiles .portfolio-content .portfolio-href {
+  -webkit-transition: 0.15s linear;
+  transition: 0.15s linear;
+}
+
+#Profiles .portfolio-content .portfolio-href:hover {
+  color: #00CFFD;
+}
+
+#Profiles .portfolio-content .portfolio-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px 30px;
+}
+
+#Profiles .portfolio-content .portfolio-btn {
+  width: 100%;
+  border: 0;
+  outline: none;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+#Profiles .portfolio-content .portfolio-btn:last-child {
+  margin: 0;
+}
+
+#Profiles .portfolio-content .portfolio-btn.edit {
+  background: #00FF00;
+  color: #fff;
+}
+
+#Profiles .portfolio-content .portfolio-btn.delete {
+  background: #FF0000;
+  color: #fff;
+}
+
+#Profiles .portfolio-add-modal-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#Profiles .portfolio-add-modal-body .portfolio-add-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 30px;
+}
+
+#Profiles .portfolio-add-modal-body .portfolio-add-item:last-child {
+  margin: 0;
+}
+
+#Profiles .portfolio-add-modal-body .portfolio-add-item label {
+  font-size: 2rem;
+  color: #333;
+}
+
+#Profiles .portfolio-add-modal-body .portfolio-add-item input {
+  padding: 5px;
+  font-size: 1.25rem;
+}
+
+#Profiles .portfolio-add-modal-body .portfolio-add-item textarea {
+  height: 300px;
+}
+
+#Profiles .portfolio-edit-modal-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#Profiles .portfolio-edit-modal-body .portfolio-edit-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 30px;
+}
+
+#Profiles .portfolio-edit-modal-body .portfolio-edit-item:last-child {
+  margin: 0;
+}
+
+#Profiles .portfolio-edit-modal-body .portfolio-edit-item label {
+  font-size: 2rem;
+  color: #333;
+}
+
+#Profiles .portfolio-edit-modal-body .portfolio-edit-item input {
+  padding: 5px;
+  font-size: 1.25rem;
+}
+
+#Profiles .portfolio-edit-modal-body .portfolio-edit-item textarea {
+  height: 300px;
 }
 
 #Profiles .skills-content {

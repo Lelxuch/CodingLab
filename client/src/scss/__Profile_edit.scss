@@ -45,7 +45,115 @@
         color: $black;
     }
 
-    /*  */
+    /* portfolios content */
+    .portfolio-content {
+        display: flex;
+        flex-direction: column;
+        .portfolio-item {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            font-size: 1.25rem;
+            border: 2px solid $white;
+        }
+    
+        .portfolio-title-link {
+            transition: 0.15s linear;
+        }
+    
+        .portfolio-title-link:hover {
+            color: $dark-primary;
+        }
+    
+        .portfolio-item-elem {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-right: 2px solid $white;
+        }
+    
+        .portfolio-href {
+            transition: 0.15s linear;
+        }
+    
+        .portfolio-href:hover {
+            color: $dark-primary;
+        }
+    
+        .portfolio-btns {
+            display: flex;
+            flex-direction: column;
+            padding: 10px 30px;
+        }
+    
+        .portfolio-btn {
+            width: 100%;
+            border: 0;
+            outline: none;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            &:last-child {
+                margin: 0;
+            }
+        }
+
+        .portfolio-btn.edit {
+            background: $green;
+            color: $white;
+        }
+    
+        .portfolio-btn.delete {
+            background: $red;
+            color: $white;
+        }
+    }
+
+    .portfolio-add-modal-body {
+        display: flex;
+        flex-direction: column;
+        .portfolio-add-item {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+            &:last-child {
+                margin: 0;
+            }
+            label {
+                font-size: 2rem;
+                color: $black;
+            }
+            input {
+                padding: 5px;
+                font-size: 1.25rem;
+            }
+            textarea {
+                height: 300px;
+            }
+        }
+    }    
+    
+    .portfolio-edit-modal-body {
+        display: flex;
+        flex-direction: column;
+        .portfolio-edit-item {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+            &:last-child {
+                margin: 0;
+            }
+            label {
+                font-size: 2rem;
+                color: $black;
+            }
+            input {
+                padding: 5px;
+                font-size: 1.25rem;
+            }
+            textarea {
+                height: 300px;
+            }
+        }
+    }  
 
     /* Skills */
     .skills-content{
@@ -89,7 +197,6 @@
     .links-content {
         display: flex;
         flex-direction: column;
-
     }
 
     .link-item {
