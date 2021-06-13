@@ -39,7 +39,7 @@ const Login = observer(() => {
                     </div>
                 </div>
                 <div class="signin">
-                    <form action="#" class="sign-in-form">
+                    <form class="sign-in-form">
                         <h2 class="title">Sign in</h2>
                         <input type="email" placeholder="Email"
                                value={email}
@@ -47,7 +47,7 @@ const Login = observer(() => {
                         <input type="password" placeholder="Password"
                                value={password}
                                onChange={e => setPassword(e.target.value)}/>
-                        <input type="submit" value="Login" onClick={click} class="btn"/>
+                        <input value="Login" onClick={click} class="btn"/>
                     </form>
                 </div>
             </div>

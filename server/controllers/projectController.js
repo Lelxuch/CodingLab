@@ -7,12 +7,12 @@ const jwt = require("jsonwebtoken");
 class ProjectController {
     async create(req, res, next) {
         try {
-            let {name, description, payment, hirerId, categoryId} = req.body
+            let {name, description, payment, categoryId} = req.body
             const {file} = req.files
             let fileName = uuid.v4() + ".docx"
             file.mv(path.resolve(__dirname, '..', 'static', fileName))
 
-            const project = await Project.create({name, description, payment, hirerId, categoryId, file: fileName})
+            const project = await Project.create({name, description, payment, categoryId, file: fileName})
 
             return res.json(project)
         } catch (e) {
