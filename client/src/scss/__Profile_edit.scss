@@ -8,6 +8,7 @@
 
     .container2 {
         width: 85%;
+        margin: 0 auto;
         @include media (">=LGdesktop") {
             width: 1700px;
         }        
@@ -153,7 +154,7 @@
                 height: 300px;
             }
         }
-    }  
+    }
 
     /* Skills */
     .skills-content{

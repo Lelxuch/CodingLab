@@ -11,6 +11,7 @@ import Profile_edit_links from './pages/Profile_edit_links'
 import Profile_edit_portfolio from './pages/Profile_edit_portfolio'
 import Profile_settings_personal from './pages/Settings_personal'
 import Profile_settings_password from './pages/Settings_password'
+import Profile_portfolio_info from './pages/Profile_portfolio_info'
 import Main_freelancer from './pages/Main_freelancer'
 import Main_freelancer_Jobs from './pages/Main_freelancer_jobs'
 import Main_freelancer_Browse from './pages/Main_freelancer_browse'
@@ -55,6 +56,7 @@ const App = observer(() => {
                     <Route exact path="/main/hirer/find" component={Main_hirer_find} />
                     <Route exact path="/main/hirer/post" component={Main_hirer_post} />
                     <Route exact path="/profile/freelancer/view" component={Profile_freelancer} />
+                    <Route exact path="/profile/portfolio/:id" component ={Profile_portfolio_info} />
                     <Route exact path="/profile/edit/portfolio" component ={Profile_edit_portfolio} />
                     <Route exact path="/profile/edit/skills" component ={Profile_edit_skills} />
                     <Route exact path="/profile/edit/links" component ={Profile_edit_links} />

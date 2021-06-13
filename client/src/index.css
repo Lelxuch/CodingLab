@@ -2639,6 +2639,54 @@ footer {
 * Testing
 *
 **/
+#Portfolio_info header {
+  margin-top: 20px;
+}
+
+#Portfolio_info .container2 {
+  width: 85%;
+  margin: 0 auto;
+}
+
+@media (min-width: 1920px) {
+  #Portfolio_info .container2 {
+    width: 1700px;
+  }
+}
+
+#Portfolio_info .main {
+  margin-top: 50px;
+  margin-bottom: 150px;
+}
+
+#Portfolio_info .item {
+  margin-bottom: 50px;
+}
+
+#Portfolio_info .item:last-child {
+  margin: 0;
+}
+
+#Portfolio_info .item .title {
+  font-size: 3rem;
+}
+
+#Portfolio_info .item .content {
+  font-size: 1.75rem;
+  margin-left: 30px;
+}
+
+#Portfolio_info .portfolio-img {
+  width: 100%;
+  height: 700px;
+  border-radius: 20px;
+}
+
+/**
+*
+* Testing
+*
+**/
 #Profile_hirer {
   /* Switcher */
   /* Top block */
@@ -3134,6 +3182,7 @@ footer {
 
 #Profiles .container2 {
   width: 85%;
+  margin: 0 auto;
 }
 
 @media (min-width: 1920px) {
