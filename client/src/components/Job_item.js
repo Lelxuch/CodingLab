@@ -1,22 +1,35 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, {useContext} from 'react'
+import {Link} from 'react-router-dom'
+import {observer} from "mobx-react-lite";
+import {Context} from "../index";
+import Project_item from "./Project_item";
 
-const Job_item = (key, job) => {
+const Job_item = observer(({job}) => {
+    const {project} = useContext(Context)
     return (
-        <div key={ key } className="job-item">
+        <div  className="job-item">
             <div className="job-top">
                 <Link className="job-title" to="/project/:id">
-                    Job title
+                    {project.projects.map((project) =>
+                        <div key={(job.projectId === project.id)}>
+                            {(job.projectId === project.id) ? project.name : ""}
+                        </div>
+                    )}
                 </Link>
                 <div className="job-status">
-                    In process
+
+                    {job.status}
                 </div>
             </div>
             <div className="job-description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque est impedit totam optio! Nobis libero quas blanditiis expedita fuga possimus aliquid temporibus. Esse natus consequatur possimus quidem, voluptatibus quaerat quod.
+                {project.projects.map((project) =>
+                    <div key={(job.projectId === project.id)}>
+                        {(job.projectId === project.id) ? project.description : ""}
+                    </div>
+                )}
             </div>
         </div>
     )
-}
+})
 
 export default Job_item

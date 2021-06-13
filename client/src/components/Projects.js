@@ -1,8 +1,11 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import Project_item from '../components/Project_item.js'
+import {Context} from "../index";
 
 const Projects = () => {
+    const {project} = useContext(Context)
+
     const [projects] = useState (
         [{
             "id": 1,
@@ -37,7 +40,7 @@ const Projects = () => {
                     <option value="Denied">Denied</option>
                 </select>
             </div>
-            {projects.map((project) => (
+            {project.projects.map((project) => (
                 <Project_item key={ project.id } project={ project }/>
             ))}
         </div>

@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import Browse_job_item from '../components/Browse_job_item.js'
 import Skills from '../components/Skills.js'
+import {Context} from "../index";
 
 const Browse = () => {
+    const {project} = useContext(Context)
     return (
         <div>
             <form className="browse-filter">
@@ -34,11 +36,9 @@ const Browse = () => {
                     <Skills />
                 </div>
             </form>
-            <Browse_job_item />
-            <Browse_job_item />
-            <Browse_job_item />
-            <Browse_job_item />
-            <Browse_job_item />
+            {project.projects.map(project =>
+                <Browse_job_item key={project.id} project={project}/>
+            )}
         </div>
     )
 }

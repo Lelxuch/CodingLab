@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import Header from '../components/Header.js'
 
 function Main_freelancer() {
+    const project = {id: 1, name: "WebSite Project", description: "Project description of website...", payment: 10000}
+
     return (
         <div id="Project-info">
             <Header />
@@ -35,16 +37,16 @@ function Main_freelancer() {
                 <div className="project-details">
                     <div className="details-item">
                         <div className="details-title">
-                            Title
+                            {project.name}
                         </div>
                         <div className="details-content">
-                            Spotify remake
+                            Spotify Remake
                         </div>
                     </div>
                     <div className="details-item">
                         <div className="details-title">Description</div>
                         <div className="details-content">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates, ut perferendis unde fugiat deserunt in vero ex quibusdam dolores accusantium, commodi debitis illum corrupti, asperiores eveniet minus quas perspiciatis atque. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde exercitationem beatae ad quo dolores! Ipsa soluta adipisci nobis inventore architecto nulla atque. Ducimus cumque fuga assumenda quod vitae voluptatum similique!
+                            {project.description}
                         </div>
                     </div>
                     <div className="details-item">
@@ -56,7 +58,7 @@ function Main_freelancer() {
                     <div className="details-item">
                         <div className="details-title">Payment</div>
                         <div className="details-content">
-                            100$
+                            {project.payment}$
                         </div>
                     </div>
                 </div>
