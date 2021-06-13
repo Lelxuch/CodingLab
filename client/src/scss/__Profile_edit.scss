@@ -14,6 +14,10 @@
         }        
     }
 
+    button {
+        cursor: pointer;
+    }
+
     .profile-edit-content {
         background: $dark-second-back;
         margin-top: 50px;

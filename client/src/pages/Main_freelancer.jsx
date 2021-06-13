@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Header from '../components/Header.js'
 
-function Main_freelancer() {
+function Moderator_freelancer() {
     return (
         <div id="Main_freelancer">
             <Header />
@@ -29,4 +29,4 @@ function Main_freelancer() {
     );
 }
 
-export default Main_freelancer;
+export default Moderator_freelancer;
