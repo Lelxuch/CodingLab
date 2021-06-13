@@ -1,11 +1,11 @@
-import React from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import LandingPage from './pages/LandingPage'
 import Login from './pages/Login'
 import RegisterStep1 from './pages/RegisterStep1'
 import RegisterStep2 from './pages/RegisterStep2'
 import Profile_freelancer from './pages/Profile_freelancer'
-import Pofile_hirer from './pages/Profile_hirer'
+import Profile_hirer from './pages/Profile_hirer'
 import Profile_skills from './pages/Profile_skills'
 import Profile_settings_personal from './pages/Settings_personal'
 import Profile_settings_password from './pages/Settings_password'
@@ -18,8 +18,23 @@ import Main_hirer_projects from './pages/Main_hirer_projects'
 import Main_hirer_find from './pages/Main_hirer_find'
 import Main_hirer_post from './pages/Main_hirer_post'
 import Project_info from './pages/Project_info'
+import {observer} from "mobx-react-lite";
+import {check} from "./http/UserAPI";
+import {Context} from "./index";
 
-function App() {
+
+const App = observer(() => {
+    const {user} = useContext(Context)
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        check().then(data => {
+            user.setUser(true)
+            user.setIsAuth(true)
+        }).finally(() => setLoading(false))
+    }, [])
+
+
 
     return (
         <Router>
@@ -39,7 +54,7 @@ function App() {
                     <Route exact path="/main/hirer/post" component={Main_hirer_post} />
                     <Route exact path="/profile/freelancer/view" component={Profile_freelancer} />
                     <Route exact path="/profile/edit/skills" component ={Profile_skills} />
-                    <Route exact path="/profile/hirer/view" component={Pofile_hirer} />
+                    <Route exact path="/profile/hirer/view" component={Profile_hirer} />
                     <Route exact path="/profile/settings/personal" component={Profile_settings_personal} />
                     <Route exact path="/profile/settings/password" component={Profile_settings_password} />
                     <Route exact path="/project/:id" component={Project_info} />
@@ -47,6 +62,6 @@ function App() {
             </div>
         </Router>
     );
-}
+});
 
 export default App;

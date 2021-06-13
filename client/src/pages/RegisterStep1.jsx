@@ -1,14 +1,28 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import { Link } from 'react-router-dom';
-import {login, registration} from "../http/UserAPI";
+import {registration} from "../http/UserAPI";
+import {useHistory} from "react-router-dom";
+import {observer} from "mobx-react-lite";
+import {Context} from "../index";
+import {REGISTRATION2_ROUTE} from "../utils/consts";
 
-function Register() {
+
+const Register = observer(() => {
+    const {user} = useContext(Context)
+    const history = useHistory()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
     const click = async () => {
-        const response = await registration(email, password);
-        console.log(response)
+        try{
+            let data;
+            data = await registration(email, password);
+            user.setUser(user)
+            user.setIsAuth(true)
+            history.push(REGISTRATION2_ROUTE)
+        }catch (e) {
+            alert(e.response.data.message)
+        }
     }
 
     return (
@@ -18,7 +32,7 @@ function Register() {
                     <div class="info-block">
                         <div class="info-block-content">
                             <h3>
-                                Already have an accout?
+                                Already have an account?
                             </h3>
                             <Link to="/login">Sign in</Link>
                         </div>
@@ -41,6 +55,6 @@ function Register() {
             </div>
         </div>
     );
-}
+});
 
 export default Register;

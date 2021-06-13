@@ -1,7 +1,20 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React, {useContext} from 'react'
+import {Link, useHistory} from 'react-router-dom';
+import {Context} from "../index";
+import {observer} from "mobx-react-lite";
+import {LANDING_ROUTE} from "../utils/consts";
 
-const Header = () => {
+const Header = observer( () => {
+    const {user} = useContext(Context)
+    const history = useHistory()
+
+
+    const logOut = () => {
+        user.setUser({})
+        user.setIsAuth(false)
+        history.push(LANDING_ROUTE)
+    }
+
     return (
         <header id="main-header">
             <nav className="navbar navbar-expand-lg">
@@ -23,7 +36,7 @@ const Header = () => {
                                 <Link className="dropdown-item" to="/profile/freelancer/view">View profile</Link>
                                 <Link className="dropdown-item" to="/profile/settings/personal">Settings</Link>
                                 <div className="dropdown-divider"></div>
-                                <Link className="dropdown-item" href="#">Log out</Link>
+                                <Link className="dropdown-item" onClick={ ()=> logOut()} >Log out</Link>
                             </div>
                         </li>
                     </ul>
@@ -31,6 +44,6 @@ const Header = () => {
             </nav>
         </header>
     )
-}
+});
 
 export default Header

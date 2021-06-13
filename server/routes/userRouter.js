@@ -4,7 +4,7 @@ const userController = require('../controllers/userController')
 const authMiddleware = require('../middleware/authMiddleware')
 
 router.post('/registration', userController.registration1)
-router.put('/registration2', userController.registration2)
+router.put('/registration2', authMiddleware, userController.registration2)
 router.post('/login', userController.login)
 router.get('/auth', authMiddleware, userController.check)
 router.put('/password', userController.changePassword)

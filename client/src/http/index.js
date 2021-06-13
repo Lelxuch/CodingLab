@@ -9,7 +9,10 @@ const $authHost = axios.create({
 })
 
 const authInterceptor = config => {
-    config.headers.authorization = `Bearer ${localStorage.getItem('token')}`
+    const tok = localStorage.getItem('token')
+    console.log(tok)
+    config.headers.authorization = "Bearer "+tok
+    console.log(config)
     return config
 }
 

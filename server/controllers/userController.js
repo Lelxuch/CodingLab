@@ -1,3 +1,5 @@
+const uuid = require('uuid')
+const path = require('path')
 const {User} = require('../models/models')
 const ApiError = require('../error/ApiError')
 const bcrypt = require('bcrypt')
@@ -34,20 +36,15 @@ class UserController {
 
     async registration2(req, res, next) {
         try{
-            const token = req.headers.authorization.split(' ')[1]
-            if (!token) {
-                return res.status(401).json({message: "Не авторизован"})
-            }
-            const decoded = jwt.verify(token, process.env.SECRET_KEY)
-
             const user = await User.update(
                 {
                     username: req.body.username,
                     firstName: req.body.firstName,
                     lastName: req.body.lastName,
+                    birthDate: req.body.birthDate,
                     role: req.body.role
                 },
-                {returning: true, where: {id: decoded.id}}
+                {returning: true, where: {id: req.user.id}}
             )
 
             return res.json({user})
@@ -106,6 +103,29 @@ class UserController {
                 return res.json(user)
             }
 
+        }catch (e){
+            next(ApiError.badRequest(e.message))
+        }
+    }
+
+    async setPhoto(req, res, next) {
+        try{
+            const {img} = req.files
+            let fileName = uuid.v4() + ".jpg"
+            await img.mv(path.resolve(__dirname, '..', 'static', fileName))
+
+            const token = req.headers.authorization.split(' ')[1]
+            if (!token) {
+                return res.status(401).json({message: "Не авторизован"})
+            }
+            const decoded = jwt.verify(token, process.env.SECRET_KEY)
+
+            const user = await User.update(
+                {img: fileName},
+                {returning: true, where: {id: decoded.id}}
+            )
+
+            return res.json({user})
         }catch (e){
             next(ApiError.badRequest(e.message))
         }
