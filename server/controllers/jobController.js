@@ -23,10 +23,10 @@ class JobController {
             let offset = page * limit - limit
             let jobs;
             if (!status) {
-                jobs = await Job.findAndCountAll({limit, offset})
+                jobs = await Job.findAndCountAll({where: {id: req.user.id}, limit, offset})
             }
             if (status) {
-                jobs = await Job.findAndCountAll({where: {status}, limit, offset})
+                jobs = await Job.findAndCountAll({where: {id: req.user.id, status}, limit, offset})
             }
 
             return res.json(jobs)

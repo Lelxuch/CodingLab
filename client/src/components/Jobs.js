@@ -1,8 +1,12 @@
-import { React, useState } from 'react'
+import { React, useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import Job_item from '../components/Job_item.js'
+import {Context} from "../index";
+import {observer} from "mobx-react-lite";
 
-const Jobs = () => {
+const Jobs = observer(() => {
+    const {job} = useContext(Context)
+
     return (
         <div>
             <div className="job-filter">
@@ -13,12 +17,11 @@ const Jobs = () => {
                     <option value="Declined">Declined</option>
                 </select>
             </div>
-            <Job_item />
-            <Job_item />
-            <Job_item />
-            <Job_item />
+            {job.jobs.map(job =>
+                <Job_item key={job.id} job={job}/>
+            )}
         </div>
     )
-}
+})
 
 export default Jobs

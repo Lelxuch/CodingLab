@@ -12,14 +12,25 @@ const Register = observer(() => {
     const history = useHistory()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [repeatPassword, setRepeatPassword] = useState('')
 
     const click = async () => {
         try{
-            let data;
-            data = await registration(email, password);
-            user.setUser(user)
-            user.setIsAuth(true)
-            history.push(REGISTRATION2_ROUTE)
+            const filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            if(filter.test(email))
+            {
+                if (repeatPassword == password) {
+                    let data;
+                    data = await registration(email, password);
+                    user.setUser(user)
+                    user.setIsAuth(true)
+                    history.push(REGISTRATION2_ROUTE)
+                } else {
+                    alert("Please repeat password correctly")
+                }
+            } else {
+                alert("Please write correct email")
+            }
         }catch (e) {
             alert(e.response.data.message)
         }
@@ -40,7 +51,7 @@ const Register = observer(() => {
                     </div>
                 </div>
                 <div class="signin">
-                    <form class="sign-in-form">
+                    <form  class="sign-in-form">
                         <h2 class="title">Sign up</h2>
                         <input type="email" placeholder="Email"
                                value={email}
@@ -48,7 +59,9 @@ const Register = observer(() => {
                         <input type="password" placeholder="Password"
                                value={password}
                                onChange={e => setPassword(e.target.value)}/>
-                        <input type="password" placeholder="Repeat password" />
+                        <input type="password" placeholder="Repeat password"
+                               value={repeatPassword}
+                               onChange={e => setRepeatPassword(e.target.value)}/>
                         <input value="Sign up" onClick={click}  class="btn"/>
                     </form>
                 </div>

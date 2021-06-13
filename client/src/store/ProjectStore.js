@@ -1,66 +1,40 @@
 import {makeAutoObservable} from "mobx";
 
-
-export default class ProjectStore {
+export default class JobStore {
     constructor() {
-        this._types = []
-        this._brands = []
-        this._devices = []
-        this._selectedType = {}
-        this._selectedBrand = {}
-        this._page = 1
-        this._totalCount = 0
-        this._limit = 10
+        this._categories = [
+            {id: 1, name: 'Web Sites'},
+            {id: 2, name: 'Mobile Apps'},
+            {id: 3, name: 'Game Dev'},
+            {id: 4, name: 'Design'}
+        ]
+        this._projects = [
+            {id: 1, name: "WebSite Project", description: "Project description of website...", payment: 10000},
+            {id: 2, name: "Mobile App project", description: "Project description of mobile app...", payment: 10000},
+            {id: 3, name: "Game Dev project", description: "Project description of game process...", payment: 10000},
+            {id: 4, name: "Design project", description: "Project description of design project...", payment: 10000}
+        ]
+        this._selectedCategory = {}
         makeAutoObservable(this)
     }
-
-    setTypes(types) {
-        this._types = types
-    }
-    setBrands(brands) {
-        this._brands = brands
-    }
-    setDevices(devices) {
-        this._devices = devices
+    setCategories(categories) {
+        this._categories = categories
     }
 
-    setSelectedType(type) {
-        this.setPage(1)
-        this._selectedType = type
-    }
-    setSelectedBrand(brand) {
-        this.setPage(1)
-        this._selectedBrand = brand
-    }
-    setPage(page) {
-        this._page = page
-    }
-    setTotalCount(count) {
-        this._totalCount = count
+    setSelectedCategory(category) {
+        this._selectedCategory = category
     }
 
-    get types() {
-        return this._types
+    setProjects(projects) {
+        this._projects = projects
     }
-    get brands() {
-        return this._brands
+    get categories() {
+        return this._categories
     }
-    get devices() {
-        return this._devices
+    get projects() {
+        return this._projects
     }
-    get selectedType() {
-        return this._selectedType
-    }
-    get selectedBrand() {
-        return this._selectedBrand
-    }
-    get totalCount() {
-        return this._totalCount
-    }
-    get page() {
-        return this._page
-    }
-    get limit() {
-        return this._limit
+    get selectedCategory() {
+        return this._selectedCategory
     }
 }
