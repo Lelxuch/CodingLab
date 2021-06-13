@@ -23,13 +23,12 @@ const Register2 = observer(() => {
             data = await registration2(username, firstName, lastName, birthDate, role);
             user.setUser(user)
             user.setIsAuth(true)
-            if(role === "Freelancer")history.push(PROFILE_F)
+            if(role === 'Freelancer')history.push(PROFILE_F)
             history.push(PROFILE_H)
         }catch (e) {
             alert(e.response.data.message)
         }
     }
-
 
 
     return (
@@ -73,9 +72,9 @@ const Register2 = observer(() => {
                         <div className="item2 btns">
                             <h3>What type of account (Don't worry, you can change it later)</h3>
                             <div className="btns">
-                                <input className="btn" type="button" value="Hirer" onChange={e => setRole("Hirer")}
+                                <input className="btn" type="button" value="Hirer" onChange={e => setRole('Hirer')}
                                        onClick={click}/>
-                                <input className="btn" type="button" value="Freelancer" onChange={e => setRole("Freelancer")}
+                                <input className="btn" type="button" value="Freelancer" onChange={e => setRole('Freelancer')}
                                        onClick={click}/>
                             </div>
                         </div>

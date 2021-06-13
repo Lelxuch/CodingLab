@@ -40,7 +40,7 @@ const Register = observer(() => {
                     </div>
                 </div>
                 <div class="signin">
-                    <form action="#" class="sign-in-form">
+                    <form class="sign-in-form">
                         <h2 class="title">Sign up</h2>
                         <input type="email" placeholder="Email"
                                value={email}
@@ -49,7 +49,7 @@ const Register = observer(() => {
                                value={password}
                                onChange={e => setPassword(e.target.value)}/>
                         <input type="password" placeholder="Repeat password" />
-                        <input type="submit" value="Sign up" onClick={click}  class="btn"/>
+                        <input value="Sign up" onClick={click}  class="btn"/>
                     </form>
                 </div>
             </div>

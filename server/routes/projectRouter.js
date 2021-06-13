@@ -2,9 +2,10 @@ const Router = require('express')
 const router = new Router()
 const projectController = require('../controllers/projectController')
 const checkRole = require('../middleware/checkRoleMiddleware')
+const authMiddleware = require('../middleware/authMiddleware')
 
 
-router.post('/', projectController.create)
+router.post('/', authMiddleware, projectController.create)
 router.get('/', projectController.getAll)
 router.get('/:id', projectController.getOne)
 router.get('/:id/status', projectController.getStatus)
