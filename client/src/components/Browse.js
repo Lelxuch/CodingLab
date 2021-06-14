@@ -14,8 +14,8 @@ const Browse = () => {
                 <div className="browse-filter-item payment">
                     <span className="title">Payment: </span>
                     <div className="payment-content">
-                        <input type="text" placeholder="min" />
-                        <input type="text" placeholder="max" />
+                        <input type="text" placeholder="min"/>
+                        <input type="text" placeholder="max"/>
                     </div>
                 </div>
                 <div className="browse-filter-item category">
@@ -24,16 +24,18 @@ const Browse = () => {
                     </span>
                     <div className="category-content">
                         <select name="categorySelect" id="categorySelect">
-                            <option value="WEB_development">Web development</option>
-                            <option value="WEB_development">Web development</option>
-                            <option value="WEB_development">Web development</option>
-                            <option value="WEB_development">Web development</option>
+                            {project.categories.map((category) =>
+                                <option key={category.id} onClick={() => project.setSelectedCategory(category)}
+                                        value="WEB_development">
+                                    {category.name}
+                                </option>
+                            )}
                         </select>
                     </div>
                 </div>
                 <div className="browse-filter-item skills">
-                    <div className="title">Skills: </div>
-                    <Skills />
+                    <div className="title">Skills:</div>
+                    <Skills/>
                 </div>
             </form>
             {project.projects.map(project =>

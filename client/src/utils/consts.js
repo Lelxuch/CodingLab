@@ -8,3 +8,18 @@ export const REGISTRATION_ROUTE = '/register/1'
 export const REGISTRATION2_ROUTE = '/register/2'
 export const LANDING_ROUTE = '/'
 export const PROJECT_ROUTE = '/project'
+
+export const JOBS_ROUTE = '/main/freelancer/jobs'
+export const BROWSE_ROUTE = '/main/freelancer/browse'
+export const REQUESTS_ROUTE = '/main/freelancer/requests'
+export const PROJECTS_ROUTE = '/main/hirer/projects'
+export const FIND_ROUTE ='/main/hirer/find'
+export const POST_ROUTE = '/main/hirer/post'
+export const HIRE_ROUTE = '/profile/hirer/view'
+export const PERSONAL_ROUTE = '/profile/settings/personal'
+export const PASSWORD_ROUTE = '/profile/settings/password'
+
+export const SKILLS_ROUTE = '/profile/edit/skills'
+export const LINKS_ROUTE = '/profile/edit/links'
+
+export const INFO_ROUTE = '/project/:id'

@@ -2,7 +2,7 @@ import React, {useContext, useState} from 'react'
 import Skills from '../components/Skills'
 import {observer} from "mobx-react-lite";
 import {Context} from "../index";
-import {createProject} from "../http/ProjectsAPI";
+import {createProject, createProjectWithoutFile} from "../http/ProjectsAPI";
 
 const Adding_project = observer(() => {
     const {project} = useContext(Context)
@@ -18,14 +18,17 @@ const Adding_project = observer(() => {
     }
 
     const click = () => {
-        try{
+        try {
             const formData = new FormData()
             formData.append('name', name)
             formData.append('description', description)
             formData.append('payment', `${payment}`)
-            formData.append('file', file)
-
-            alert(createProject(formData))
+            if (file == null) {
+                formData.append('file', file)
+                createProjectWithoutFile(formData)
+            } else {
+                createProject(formData)
+            }
             // let data;
             // data = await createProject(name, description, payment, file);
         }catch (e) {

@@ -20,6 +20,18 @@ class ProjectController {
         }
     }
 
+    async createWithoutFile(req, res, next) {
+        try {
+            let {name, description, payment, categoryId} = req.body
+
+            const project = await Project.create({name, description, payment, categoryId})
+
+            return res.json(project)
+        } catch (e) {
+            next(ApiError.badRequest(e.message))
+        }
+    }
+
     async getAll(req, res, next) {
         try{
             let {payment, categoryId, limit, page} = req.query

@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react'
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Switch, Route, BrowserRouter} from 'react-router-dom'
 import LandingPage from './pages/LandingPage'
 import Login from './pages/Login'
 import RegisterStep1 from './pages/RegisterStep1'
@@ -22,6 +22,7 @@ import Project_info from './pages/Project_info'
 import {observer} from "mobx-react-lite";
 import {check} from "./http/UserAPI";
 import {Context} from "./index";
+import AppRouter from "./components/AppRouter";
 
 
 const App = observer(() => {
@@ -35,35 +36,40 @@ const App = observer(() => {
         }).finally(() => setLoading(false))
     }, [])
 
-
-
     return (
-        <Router>
-            <div className="App">
-                <Switch>
-                    <Route exact path="/" component={LandingPage} />
-                    <Route exact path="/login" component={Login} />
-                    <Route exact path="/register/1" component={RegisterStep1} />
-                    <Route exact path="/register/2" component={RegisterStep2} />
-                    <Route exact path="/main/freelancer" component={Main_freelancer} />
-                    <Route exact path="/main/freelancer/jobs" component={Main_freelancer_Jobs} />
-                    <Route exact path="/main/freelancer/browse" component={Main_freelancer_Browse} />
-                    <Route exact path="/main/freelancer/requests" component={Main_freelancer_Requests} />
-                    <Route exact path="/main/hirer" component={Main_hirer} />
-                    <Route exact path="/main/hirer/projects" component={Main_hirer_projects} />
-                    <Route exact path="/main/hirer/find" component={Main_hirer_find} />
-                    <Route exact path="/main/hirer/post" component={Main_hirer_post} />
-                    <Route exact path="/profile/freelancer/view" component={Profile_freelancer} />
-                    <Route exact path="/profile/edit/skills" component ={Profile_edit_skills} />
-                    <Route exact path="/profile/edit/links" component ={Profile_edit_links} />
-                    <Route exact path="/profile/hirer/view" component={Profile_hirer} />
-                    <Route exact path="/profile/settings/personal" component={Profile_settings_personal} />
-                    <Route exact path="/profile/settings/password" component={Profile_settings_password} />
-                    <Route exact path="/project/:id" component={Project_info} />
-                </Switch>
-            </div>
-        </Router>
+        <BrowserRouter>
+            <AppRouter />
+        </BrowserRouter>
     );
 });
 
 export default App;
+/*
+
+return (
+    <Router>
+        <div className="App">
+            <Switch>
+                <Route exact path="/" component={LandingPage} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/register/1" component={RegisterStep1} />
+                <Route exact path="/register/2" component={RegisterStep2} />
+                <Route exact path="/main/freelancer" component={Main_freelancer} />
+                <Route exact path="/main/freelancer/jobs" component={Main_freelancer_Jobs} />
+                <Route exact path="/main/freelancer/browse" component={Main_freelancer_Browse} />
+                <Route exact path="/main/freelancer/requests" component={Main_freelancer_Requests} />
+                <Route exact path="/main/hirer" component={Main_hirer} />
+                <Route exact path="/main/hirer/projects" component={Main_hirer_projects} />
+                <Route exact path="/main/hirer/find" component={Main_hirer_find} />
+                <Route exact path="/main/hirer/post" component={Main_hirer_post} />
+                <Route exact path="/profile/freelancer/view" component={Profile_freelancer} />
+                <Route exact path="/profile/edit/skills" component ={Profile_edit_skills} />
+                <Route exact path="/profile/edit/links" component ={Profile_edit_links} />
+                <Route exact path="/profile/hirer/view" component={Profile_hirer} />
+                <Route exact path="/profile/settings/personal" component={Profile_settings_personal} />
+                <Route exact path="/profile/settings/password" component={Profile_settings_password} />
+                <Route exact path="/project/:id" component={Project_info} />
+            </Switch>
+        </div>
+    </Router>
+);*/
