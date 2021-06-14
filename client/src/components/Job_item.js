@@ -1,11 +1,18 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import {observer} from "mobx-react-lite";
 import {Context} from "../index";
 import Project_item from "./Project_item";
+import {fetchCategories, fetchProjects} from "../http/ProjectsAPI";
 
 const Job_item = observer(({job}) => {
     const {project} = useContext(Context)
+
+    useEffect(() => {
+        fetchCategories().then(data => project.setCategories(data))
+        fetchProjects().then(data => project.setProjects(data.rows))
+    }, [])
+
     return (
         <div  className="job-item">
             <div className="job-top">

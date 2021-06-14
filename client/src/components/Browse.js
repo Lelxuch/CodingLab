@@ -1,10 +1,17 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect} from 'react'
 import Browse_job_item from '../components/Browse_job_item.js'
 import Skills from '../components/Skills.js'
 import {Context} from "../index";
+import {fetchCategories, fetchProjects} from "../http/ProjectsAPI";
 
 const Browse = () => {
     const {project} = useContext(Context)
+
+    useEffect(() => {
+        fetchCategories().then(data => project.setCategories(data))
+        fetchProjects().then(data => project.setProjects(data.rows))
+    }, [])
+
     return (
         <div>
             <form className="browse-filter">

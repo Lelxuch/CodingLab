@@ -1,11 +1,15 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import Skills from '../components/Skills'
 import {observer} from "mobx-react-lite";
 import {Context} from "../index";
-import {createProject, createProjectWithoutFile} from "../http/ProjectsAPI";
+import {createProject, createProjectWithoutFile, fetchCategories, fetchProjects} from "../http/ProjectsAPI";
 
 const Adding_project = observer(() => {
     const {project} = useContext(Context)
+
+    useEffect(() => {
+        fetchCategories().then(data => project.setCategories(data))
+    }, [])
     const [name, setName] = useState('')
     const [description, setDescription] = useState('')
     const [payment, setPayment] = useState(0)
@@ -57,9 +61,12 @@ const Adding_project = observer(() => {
                     <label htmlFor="project_category">Category</label>
                     <select id="project_category" name="cars">
                         <option value="volvo">---</option>
-                        <option value="saab">WEB</option>
-                        <option value="fiat">IOS</option>
-                        <option value="audi">Android</option>
+                        {project.categories.map((category) =>
+                            <option key={category.id} onClick={() => project.setSelectedCategory(category)}
+                                    value="volvo">
+                                {category.name}
+                            </option>
+                        )}
                     </select>
                 </div>
                 <div className="input-item">

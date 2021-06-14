@@ -2,56 +2,18 @@ import {makeAutoObservable} from "mobx";
 
 export default class JobStore {
     constructor() {
-        this._users = [
-            {id: 1, email: 'user1@mail.ru', password: '12345', firstName: 'Some', secondName: 'User'},
-            {id: 2, email: 'user2@mail.ru', password: '12345', firstName: 'Some2', secondName: 'User2'},
-            {id: 3, email: 'user3@mail.ru', password: '12345', firstName: 'Some3', secondName: 'User3'}
-        ]
+        this._users = []
 
-        this._hirers = [
-            {id: 1},
-            {id: 2},
-            {id: 3},
-        ]
-        this._hirerReviews = [
-            {id: 1, comment: "Some comment..."},
-            {id: 2, comment: "Some comment..."},
-            {id: 3, comment: "Some comment..."},
-        ]
-        this._freelancerReviews = [
-            {id: 1, comment: "Some comment..."},
-            {id: 2, comment: "Some comment..."},
-            {id: 3, comment: "Some comment..."}
-        ]
-        this._freelancers = [
-            {id: 1},
-            {id: 2},
-            {id: 3}
-        ]
-        this._skills = [
-            {id: 1, name: "JavaScript"},
-            {id: 2, name: "HTML"},
-            {id: 3, name: "CSS"}
-        ]
-        this._freelancerSkills = [
-            {id: 1},
-            {id: 2},
-            {id: 3}
-        ]
+        this._hirers = []
+        this._hirerReviews = []
+        this._freelancerReviews = []
+        this._freelancers = []
+        this._skills = []
+        this._freelancerSkills = []
 
-        this._works = [
-            {id: 1, name: "WebSite Project", description: "Project description of website..."},
-            {id: 2, name: "Mobile App project", description: "Project description of mobile app..."},
-            {id: 3, name: "Game Development project", description: "Project description of game process..."},
-            {id: 4, name: "Design project", description: "Project description of design project..."}
-        ]
+        this._works = []
 
-        this._jobs = [
-            {id: 1, status: "IN PROCESS", projectId: 1},
-            {id: 2, status: "IN PROCESS", projectId: 2},
-            {id: 3, status: "IN PROCESS", projectId: 3},
-            {id: 4, status: "IN PROCESS", projectId: 4}
-        ]
+        this._jobs = []
 
         makeAutoObservable(this)
     }
