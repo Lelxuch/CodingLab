@@ -9,7 +9,7 @@ function Main_freelancer() {
     const {id} = useParams()
     useEffect(() => {
         fetchOneProject(id).then(data => setProject(data))
-        fetchCategories().then(data => project.setCategories(data))
+        // fetchCategories().then(data => project.setCategories(data))
     }, [])
 
     return (
@@ -46,17 +46,14 @@ function Main_freelancer() {
                         <div className="details-title">
                             {project.name}
                         </div>
-                        <div className="details-content">
-                            Spotify Remake
-                        </div>
                     </div>
                     <div className="details-item">
                         <div className="details-title">
-                            {project.categories.map((category) =>
-                                <text key={(category.id === project.categoryId)}>
-                                    {(category.id === project.categoryId) ? category.name : ""}
-                                </text>
-                            )}
+                            {/*{project.categories.map((category) =>*/}
+                            {/*    <text key={(category.id === project.categoryId)}>*/}
+                            {/*        {(category.id === project.categoryId) ? category.name : ""}*/}
+                            {/*    </text>*/}
+                            {/*)}*/}
                         </div>
                         <div className="details-content">
                             {project.description}

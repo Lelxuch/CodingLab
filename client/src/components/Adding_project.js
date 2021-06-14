@@ -7,9 +7,9 @@ import {createProject, createProjectWithoutFile, fetchCategories, fetchProjects}
 const Adding_project = observer(() => {
     const {project} = useContext(Context)
 
-    useEffect(() => {
-        fetchCategories().then(data => project.setCategories(data))
-    }, [])
+    // useEffect(() => {
+    //     fetchCategories().then(data => project.setCategories(data))
+    // }, [])
     const [name, setName] = useState('')
     const [description, setDescription] = useState('')
     const [payment, setPayment] = useState(0)
