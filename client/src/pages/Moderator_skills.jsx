@@ -12,7 +12,7 @@ const Moderator_skills = () => {
                 <Link to="/moderator/skills" className="nav-link active">Skills</Link>
                 <Link to="/moderator/category" className="nav-link">Category</Link>
             </nav>
-            <div className="content container2" id="main-default">
+            <div className="content container2">
                 
             </div>
         </div>
