@@ -1,9 +1,16 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
 import Header from '../components/Header.js'
+import {useParams} from 'react-router-dom'
+import {fetchCategories, fetchOneProject} from "../http/ProjectsAPI";
 
 function Main_freelancer() {
-    const project = {id: 1, name: "WebSite Project", description: "Project description of website...", payment: 10000}
+    const [project, setProject] = useState({info: []})
+    const {id} = useParams()
+    useEffect(() => {
+        fetchOneProject(id).then(data => setProject(data))
+        fetchCategories().then(data => project.setCategories(data))
+    }, [])
 
     return (
         <div id="Project-info">
@@ -44,7 +51,13 @@ function Main_freelancer() {
                         </div>
                     </div>
                     <div className="details-item">
-                        <div className="details-title">Description</div>
+                        <div className="details-title">
+                            {project.categories.map((category) =>
+                                <text key={(category.id === project.categoryId)}>
+                                    {(category.id === project.categoryId) ? category.name : ""}
+                                </text>
+                            )}
+                        </div>
                         <div className="details-content">
                             {project.description}
                         </div>
@@ -52,7 +65,7 @@ function Main_freelancer() {
                     <div className="details-item">
                         <div className="details-title">Task file</div>
                         <div className="details-content">
-                            <a className="details-download" href="../../images/test.pdf" download> Download</a>
+                            <a className="details-download" href={process.env.REACT_APP_API_URL + project.file} download> Download</a>
                         </div>
                     </div>
                     <div className="details-item">

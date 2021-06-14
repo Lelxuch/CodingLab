@@ -22,8 +22,6 @@ const Register = observer(() => {
                 if (repeatPassword == password) {
                     let data;
                     data = await registration(email, password);
-                    user.setUser(user)
-                    user.setIsAuth(true)
                     history.push(REGISTRATION2_ROUTE)
                 } else {
                     alert("Please repeat password correctly")
