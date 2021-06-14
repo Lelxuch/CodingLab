@@ -13,7 +13,7 @@ function Moderator_hirer() {
                 <Link to="/moderator/skills" className="nav-link">Skills</Link>
                 <Link to="/moderator/category" className="nav-link">Category</Link>
             </nav>
-            <div className="content container2" id="main-default">
+            <div className="content container2">
                 <Moderator_users />
             </div>
         </div>
