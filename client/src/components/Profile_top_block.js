@@ -1,6 +1,10 @@
-import React from 'react'
+import React, {useContext, useEffect, useState} from 'react'
+import {Context} from "../index";
+import {fetchUser, fetchUserId} from "../http/UserAPI";
+import {fetchOneProject} from "../http/ProjectsAPI";
+import {useParams} from "react-router-dom";
 
-var nickname = "JustSxmeDude";
+var nickname = "JustSxmeDude3";
 var score = 4.4;
 var onoff = true;
 var money = 100;
@@ -15,6 +19,14 @@ if (onoff) {
 
 
 const Profile_top_block = () => {
+    const [user, setUser] = useState()
+
+    useEffect(() => {
+        fetchUser().then(data => setUser(data))
+        console.log(user)
+    }, [])
+
+
     return (
         <div className="top-block">
                 <img src="../../images/white.jpg" alt="" />
@@ -28,7 +40,7 @@ const Profile_top_block = () => {
                     <div className="lines">
                         <div className="nickname-line line">
                             <div className="nickname">
-                                / { nickname }
+                                { nickname }
                             </div>
                         </div>
                         <div className="rating-line line">

@@ -98,6 +98,21 @@ class UserController {
         }
     }
 
+    async fetch(req, res, next) {
+        try{
+            const user = await User.findOne(
+                {
+                    where: {id: req.user.id},
+
+                },
+            )
+            return res.json({user})
+        }catch (e){
+            next(ApiError.badRequest(e.message))
+        }
+    }
+
+
     async changeRole(req, res, next) {
         try{
             const {role} = req.body
