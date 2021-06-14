@@ -23,14 +23,12 @@ const Adding_project = observer(() => {
             formData.append('name', name)
             formData.append('description', description)
             formData.append('payment', `${payment}`)
-            if (file == null) {
-                formData.append('file', file)
-                createProjectWithoutFile(formData)
+            if (file !== null) {
+                alert(createProjectWithoutFile(formData))
             } else {
-                createProject(formData)
+                formData.append('file', file)
+                alert(createProject(formData))
             }
-            // let data;
-            // data = await createProject(name, description, payment, file);
         }catch (e) {
             alert(e.response.data.message)
         }
