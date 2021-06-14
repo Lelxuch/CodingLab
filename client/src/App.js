@@ -11,6 +11,8 @@ import Profile_edit_links from './pages/Profile_edit_links'
 import Profile_settings_personal from './pages/Settings_personal'
 import Profile_settings_password from './pages/Settings_password'
 import Main_freelancer from './pages/Main_freelancer'
+import Profile_edit_portfolio from './pages/Profile_edit_portfolio'
+import Profile_portfolio_info from './pages/Profile_portfolio_info'
 import Main_freelancer_Jobs from './pages/Main_freelancer_jobs'
 import Main_freelancer_Browse from './pages/Main_freelancer_browse'
 import Main_freelancer_Requests from './pages/Main_freelancer_requests'
@@ -18,6 +20,10 @@ import Main_hirer from './pages/Main_hirer'
 import Main_hirer_projects from './pages/Main_hirer_projects'
 import Main_hirer_find from './pages/Main_hirer_find'
 import Main_hirer_post from './pages/Main_hirer_post'
+import Moderator_projects from './pages/Moderator_projects'
+import Moderator_users from './pages/Moderator_users'
+import Moderator_skills from './pages/Moderator_skills'
+import Moderator_category from './pages/Moderator_category'
 import Project_info from './pages/Project_info'
 import {observer} from "mobx-react-lite";
 import {check} from "./http/UserAPI";
@@ -44,6 +50,7 @@ const App = observer(() => {
 });
 
 export default App;
+
 /*
 
 return (
@@ -69,6 +76,12 @@ return (
                 <Route exact path="/profile/settings/personal" component={Profile_settings_personal} />
                 <Route exact path="/profile/settings/password" component={Profile_settings_password} />
                 <Route exact path="/project/:id" component={Project_info} />
+                <Route exact path="/moderator/projects" component={Moderator_projects} />
+                <Route exact path="/moderator/users" component={Moderator_users} />
+                <Route exact path="/moderator/skills" component={Moderator_skills} />
+                <Route exact path="/moderator/category" component={Moderator_category} />
+                <Route exact path="/profile/portfolio/:id" component ={Profile_portfolio_info} />
+                <Route exact path="/profile/edit/portfolio" component ={Profile_edit_portfolio} />
             </Switch>
         </div>
     </Router>

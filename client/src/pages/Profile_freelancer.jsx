@@ -29,9 +29,9 @@ function Profile_freelancer() {
                         <div className="common-title">
                             Portfolio
                         </div>
-                        <button className="common-btn">
+                        <Link className="common-btn" to="/profile/edit/portfolio">
                             <img src="../../images/Profile/edit.png" alt="" />
-                        </button>
+                        </Link>
                     </div>
                     <div className="common-content portfolio">
                         <Portfolio_card />

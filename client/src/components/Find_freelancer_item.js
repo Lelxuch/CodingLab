@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Find_project_item = () => {
+const Find_freelancer_item = () => {
     return (
         <div className="freelancer-item">
             <div className="freelancer-left">
@@ -58,4 +58,4 @@ const Find_project_item = () => {
     )
 }
 
-export default Find_project_item
+export default Find_freelancer_item

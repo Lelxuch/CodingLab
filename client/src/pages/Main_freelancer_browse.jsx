@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header.js'
 import Browse from '../components/Browse.js'
 
-
 function Main_freelancer() {
     return (
         <div id="Main_freelancer">

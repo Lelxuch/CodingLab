@@ -61,11 +61,7 @@ function Main_freelancer() {
                             {project.payment}$
                         </div>
                     </div>
-                </div>
-                <div className="last-des">
-                    <button className="request-accept-btn">Accept</button>
-                    <button className="request-decline-btn">Decline</button>
-                </div>
+                </div> 
             </div>
         </div>
     );
