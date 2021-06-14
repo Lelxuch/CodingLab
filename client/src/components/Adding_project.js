@@ -23,7 +23,7 @@ const Adding_project = observer(() => {
             formData.append('name', name)
             formData.append('description', description)
             formData.append('payment', `${payment}`)
-            if (file !== null) {
+            if (file === null) {
                 alert(createProjectWithoutFile(formData))
             } else {
                 formData.append('file', file)
