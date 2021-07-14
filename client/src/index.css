@@ -613,11 +613,11 @@ footer {
 
 #RegisterStep1 form .btn, #Login form .btn {
   background-color: #00CFFD;
-  border-radius: 20px;
   color: #fff;
   margin-top: 10px;
   border: none;
   border: 3px solid #00CFFD;
+  border-radius: 20px;
   padding: 10px 35px;
   -webkit-transition: 0.1s linear;
   transition: 0.1s linear;
@@ -719,6 +719,19 @@ footer {
 
 #RegisterStep1 #RegisterStep1 .info-block h3, #Login #RegisterStep1 .info-block h3 {
   margin-bottom: 30px;
+}
+
+#RegisterStep1 .info-block-content, #Login .info-block-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media (max-width: 768px) {
